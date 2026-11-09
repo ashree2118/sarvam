@@ -57,6 +57,8 @@ The banners and webpage share the same design language while adapting their comp
 
 ### Landing page — Bulbul V4 Flash
 
+Live: [sarvam-znz7.vercel.app](https://sarvam-znz7.vercel.app/)
+
 ![](../website/bulbul-v4/screenshots/desktop-1440.png)
 
 ## 4. Refinement & testing
@@ -148,3 +150,4 @@ I led the research, creative direction and design decisions, reviewing generated
 - [Key prompts](prompts.md)
 - [System testing](system-testing.md)
 - [Final deliverables](../README.md#final-deliverables)
+- [Live landing page](https://sarvam-znz7.vercel.app/)
