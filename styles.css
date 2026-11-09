@@ -117,7 +117,7 @@
 .uc .motif-rise { --motif-w: 115%; --motif-sink: 48%; }
 /* Desktop: four cards fit, so the carousel becomes a full-width row of four */
 @media (min-width: 1024px) {
-  .uc .rail { grid-auto-columns: calc((min(100vw * .8333, var(--page-max)) - 3 * var(--grid-gap)) / 4); overflow: visible; }
+  .uc .rail { grid-auto-columns: calc((100% - 3 * var(--grid-gap)) / 4); overflow: visible; }   /* four cards exactly fill the container */
 }
 
 /* ---------- 8. Pricing, promo, strip ---------- */

@@ -426,14 +426,14 @@ body.menu-open .site-header .actions .btn-dark { background: var(--color-sf-seco
 /* Carousel: scroll-snap, the next card peeks */
 .rail {
   display: grid; grid-auto-flow: column; grid-auto-columns: 82%; gap: var(--grid-gap);
-  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: calc((100% - var(--page-width)) / 2);
-  padding-inline: calc((100% - var(--page-width)) / 2); scrollbar-width: none; overscroll-behavior-x: contain;
+  /* Side padding = the gap outside the page container, so cards line up with the content above at every width */
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: calc((100% - min(var(--page-width), var(--page-max))) / 2);
+  padding-inline: calc((100% - min(var(--page-width), var(--page-max))) / 2); scrollbar-width: none; overscroll-behavior-x: contain;
 }
 .rail::-webkit-scrollbar { display: none; }
 .rail > * { scroll-snap-align: start; }
 @media (min-width: 768px)  { .rail { grid-auto-columns: 45%; } }
-@media (min-width: 1024px) { .rail { grid-auto-columns: calc((min(var(--page-width), var(--page-max)) - 3 * var(--grid-gap)) / 3.4); } }
-@media (min-width: 1536px) { .rail { padding-inline: calc((100% - var(--page-max)) / 2); scroll-padding-inline: calc((100% - var(--page-max)) / 2); } }
+@media (min-width: 1024px) { .rail { grid-auto-columns: calc((100% - 3 * var(--grid-gap)) / 3.4); } }   /* % = the container width (the rail's content box) */
 
 /* ---------- Bands (components.md) ---------- */
 .band {
