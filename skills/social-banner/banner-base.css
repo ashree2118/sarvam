@@ -1,0 +1,220 @@
+/* ==========================================================================
+   Sarvam banner base. Import AFTER design-system/tokens.css.
+   Every size is a multiple of --S (the artboard's short side), so one layout
+   works on 1080×1080, 1080×1350, 1080×1920, 1200×627 and 1128×191.
+   ========================================================================== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #E9E9E9; }
+body { display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; align-items: flex-start; }
+
+/* ---------- Artboard ---------- */
+.artboard {
+  --S: 1080px;                       /* override per size */
+  --m: calc(var(--S) * .074);        /* outer margin */
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  width: 1080px; height: 1080px;
+  background: var(--color-sf);
+  color: var(--color-tx);
+  font-family: var(--font-matter);
+  font-weight: var(--fw-regular);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+.artboard[data-size="1080x1080"] { width: 1080px; height: 1080px; --S: 1080px; }
+.artboard[data-size="1080x1350"] { width: 1080px; height: 1350px; --S: 1080px; }
+.artboard[data-size="1080x1920"] { width: 1080px; height: 1920px; --S: 1080px; }
+.artboard[data-size="1200x627"]  { width: 1200px; height: 627px;  --S: 627px; --m: calc(var(--S) * .09); }
+.artboard[data-size="1200x1200"] { width: 1200px; height: 1200px; --S: 1200px; }
+.artboard[data-size="1128x191"]  { width: 1128px; height: 191px;  --S: 191px; --m: 32px; }
+
+/* Story safe zone: content stays inside .safe on 1080×1920 */
+.artboard[data-size="1080x1920"] .safe { position: absolute; inset: 250px var(--m) 340px; }
+.safe { position: absolute; inset: var(--m); display: flex; flex-direction: column; z-index: 2; }
+
+/* ---------- Grounds ---------- */
+.ground-light    { background: var(--color-sf); color: var(--color-tx); }
+.ground-white    { background: var(--color-white); color: var(--color-tx); }
+.ground-night    { background: var(--ground-night);   color: var(--color-tx-inverse); --accent: var(--on-night-accent); }
+.ground-indigo   { background: var(--ground-indigo);  color: var(--color-tx-inverse); --accent: var(--on-indigo-accent); }
+.ground-maroon   { background: var(--ground-maroon);  color: var(--color-tx-inverse); --accent: var(--on-maroon-accent); }
+.ground-oxblood  { background: var(--ground-oxblood); color: var(--color-tx-inverse); --accent: var(--on-oxblood-accent); }
+.ground-forest   { background: var(--ground-forest);  color: var(--color-tx-inverse); --accent: var(--on-forest-accent); }
+.ground-amber    { background: var(--ground-amber);   color: var(--color-tx-inverse); --accent: var(--on-amber-accent); }
+.ground-dawn     { background: var(--grain), var(--spectrum-dawn);    background-blend-mode: soft-light, normal; color: var(--color-tx-inverse); --accent: var(--color-tx-inverse); }
+.ground-dusk     { background: var(--grain), var(--spectrum-dusk);    background-blend-mode: soft-light, normal; color: var(--color-tx-inverse); --accent: var(--color-tx-inverse); }
+.ground-gateway  { background: var(--grain), var(--spectrum-gateway); background-blend-mode: soft-light, normal; color: var(--color-tx-inverse); --accent: var(--color-tx-inverse); }
+
+/* Grain overlay for any layer */
+.grain::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: var(--grain); background-size: 240px; mix-blend-mode: soft-light; opacity: .9;
+}
+
+/* ---------- Type ---------- */
+.headline {
+  font-family: var(--font-season-mix);
+  font-weight: var(--fw-regular);
+  font-size: calc(var(--S) * .1);     /* typography.md §4: 0.088–0.11 × S */
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+.headline.long  { font-size: calc(var(--S) * .058); line-height: 1.1; letter-spacing: -0.02em; }
+.headline.xl    { font-size: calc(var(--S) * .11); line-height: 1.04; }
+.support {
+  font-size: calc(var(--S) * .031);
+  line-height: 1.4;
+  color: var(--accent, var(--color-tx-secondary));
+  text-wrap: pretty;
+  max-width: 30ch;
+}
+.kicker {
+  font-size: calc(var(--S) * .024);
+  line-height: 1.4;
+  letter-spacing: 0.025em;
+  color: var(--accent, var(--sr-indigo-900));
+}
+.overline {
+  font-size: calc(var(--S) * .019);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent, var(--color-tx-tertiary));
+}
+.meta {
+  font-size: calc(var(--S) * .019);
+  line-height: 1.4;
+  letter-spacing: .01em;
+  color: var(--accent, var(--color-tx-tertiary));
+}
+.hl { color: var(--sr-indigo-700); }               /* one highlighted phrase, light grounds */
+.stat-num {
+  font-family: var(--font-season-mix);
+  font-size: calc(var(--S) * .052);   /* approved Nov 2026: well below the headline */
+  line-height: 1; letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.stat-label { font-size: calc(var(--S) * .022); line-height: 1.3; color: var(--accent, var(--color-tx-tertiary)); margin-top: calc(var(--S) * .012); }
+
+/* Eyebrow between gradient hairlines (product register) */
+.eyebrow { display: inline-flex; flex-direction: column; align-items: center; gap: calc(var(--S) * .01); }
+.eyebrow::before, .eyebrow::after { content: ""; width: 100%; height: 1px; background: var(--gradient-hairline); }
+.eyebrow > span { padding: 0 calc(var(--S) * .03); font-size: calc(var(--S) * .024); letter-spacing: .025em; color: var(--sr-indigo-900); }
+
+/* Ornament (official flourish, tinted by mask) */
+.ornament {
+  display: block; flex: none; align-self: flex-start; height: calc(var(--S) * .036); aspect-ratio: 228 / 35;
+  background: var(--ornament-color, var(--sr-indigo-300));
+  -webkit-mask: url("../../assets/brand/motifs/ornament.svg") center / contain no-repeat;
+          mask: url("../../assets/brand/motifs/ornament.svg") center / contain no-repeat;
+}
+
+.a-center > .ornament, .center > .ornament { align-self: center; }
+
+/* ---------- Marks (official files only) ---------- */
+.wordmark { display: block; height: calc(var(--S) * .028); width: auto; }
+.monogram { display: block; width: calc(var(--S) * .15); height: auto; }
+
+/* Sign-off row: wordmark left, meta right */
+.signoff { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+
+/* ---------- Forms ---------- */
+/* Window: photo or gradient inside a gateway silhouette */
+.window {
+  position: absolute; z-index: 0;
+  -webkit-mask: var(--shape) center / 100% 100% no-repeat;
+          mask: var(--shape) center / 100% 100% no-repeat;
+  background-size: cover; background-position: center;
+}
+/* Motif silhouettes (--shape), ONLY for holding a photograph inside a motif (.window.motif-NN).
+   Never fill a motif silhouette with your own gradient: use the motif file as-is (.stack below). */
+.motif-01 { --shape: url("../../assets/brand/motifs/models/model-01.svg"); }
+.motif-02 { --shape: url("../../assets/brand/motifs/models/model-02.svg"); }
+.motif-03 { --shape: url("../../assets/brand/motifs/models/model-03.svg"); }
+.motif-04 { --shape: url("../../assets/brand/motifs/models/model-04.svg"); }
+.motif-05 { --shape: url("../../assets/brand/motifs/models/model-05.svg"); }
+.motif-06 { --shape: url("../../assets/brand/motifs/models/model-06.svg"); }
+.motif-07 { --shape: url("../../assets/brand/motifs/models/model-07.svg"); }
+.motif-08 { --shape: url("../../assets/brand/motifs/models/model-08.svg"); }
+.motif-09 { --shape: url("../../assets/brand/motifs/models/model-09.svg"); }
+.motif-10 { --shape: url("../../assets/brand/motifs/models/model-10.svg"); }
+.motif-11 { --shape: url("../../assets/brand/motifs/models/model-11.svg"); }
+.motif-12 { --shape: url("../../assets/brand/motifs/models/model-12.svg"); }
+.motif-13 { --shape: url("../../assets/brand/motifs/models/model-13.svg"); }
+.motif-14 { --shape: url("../../assets/brand/motifs/models/model-14.svg"); }
+.motif-15 { --shape: url("../../assets/brand/motifs/models/model-15.svg"); }
+.motif-16 { --shape: url("../../assets/brand/motifs/models/model-16.svg"); }
+
+/* Soft blurred glow (product register) */
+.glow { position: absolute; z-index: 0; border-radius: 50%; filter: blur(calc(var(--S) * .09)); opacity: .55; }
+
+/* Motif image */
+.motif { position: absolute; z-index: 0; display: block; }
+
+/* Hairline divider */
+.rule { height: 1px; background: currentColor; opacity: .18; }
+
+/* Placeholder for missing licensed assets: must be replaced before shipping */
+.placeholder {
+  position: absolute; display: grid; place-items: center; text-align: center;
+  border: 2px dashed #C43D2B; color: #C43D2B; background: #FDE7E280;
+  font: 500 18px/1.3 var(--font-matter); padding: 12px;
+}
+
+/* BLOG / ANNOUNCEMENT COVERS ONLY (typography.md §4): Matter semibold title with the wordmark
+   hung above it. Social banners use .headline + .anchor + .top-mark instead. */
+.lockup-cover { position: relative; text-align: center; color: var(--color-tx-inverse); }
+.lockup-cover .wordmark {
+  position: absolute; left: 50%; translate: -50% 0;
+  bottom: calc(100% + var(--S) * .062);
+  height: calc(var(--S) * .036);
+}
+.cover-title {
+  font-family: var(--font-matter); font-weight: var(--fw-semibold);
+  font-size: calc(var(--S) * .108); line-height: 1.1; letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+/* Stack: the official motif nested as-is. .stack > img.layer[src=model-NN.svg][style="--n:k"],
+   outermost first, 2–3 layers. --stack-w = inner box × S, --stack-step = growth per layer × S,
+   --stack-y = vertical centre. Proven values: campaign.md §3 and §5. */
+.stack { position: absolute; inset: 0; z-index: 0; }
+/* 1200×627: main 86% of the width (1.65 × S), echoes +28% (0.54 × S), 3 layers. */
+.stack.wide { --stack-w: 1.65; --stack-step: .54; }
+.stack .layer {
+  position: absolute; left: 50%; top: var(--stack-y, 50%); translate: -50% -50%;
+  width: calc(var(--S) * (var(--stack-w, .9) + var(--n) * var(--stack-step, .5)));
+  aspect-ratio: 1; max-width: none;
+}
+
+/* Fading echoes (campaign.md §4): opacity only, never recolouring. */
+.stack.fade .layer[style*="--n:1"] { opacity: .5; }
+.stack.fade .layer[style*="--n:2"] { opacity: .25; }
+
+/* Mandala linework (imagery.md §8). Markup, 8 children:
+   <div class="linework"><i class="o"></i><i class="c"></i><i style="--a:0deg"></i> … <i style="--a:300deg"></i></div>
+   --lw-color (token from the ground's hue), --lw-r (circle diameter × S), --lw-x/--lw-y (centre).
+   Approved: 4px lines (--lw-w .0037 on 1080, .0064 on 627) at --lw-opacity .06. */
+.linework { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.linework i {
+  --r: calc(var(--S) * var(--lw-r, .62));
+  position: absolute; left: var(--lw-x, 50%); top: var(--lw-y, 50%);
+  width: var(--r); aspect-ratio: 1; border-radius: 50%;
+  border: max(1px, calc(var(--S) * var(--lw-w, .0037))) solid var(--lw-color, currentColor);
+  opacity: var(--lw-opacity, .06);
+  translate: calc(-50% + cos(var(--a, 0deg)) * var(--r) / 2) calc(-50% + sin(var(--a, 0deg)) * var(--r) / 2);
+}
+.linework i.c { translate: -50% -50%; }
+.linework i.o { width: calc(var(--r) * 2); translate: -50% -50%; }
+
+/* Wordmark small at the top centre (centred pieces). Edge-aligned pieces keep it top-left in .safe. */
+.top-mark { position: absolute; z-index: 2; top: var(--m); left: 50%; translate: -50% 0; }
+
+/* Anchor (campaign.md §2): the headline alone is centred both ways; .above / .below hang off it.
+   <div class="anchor"><p class="eyebrow above">…</p><h1 class="headline">…</h1><p class="support below">…</p></div> */
+.anchor { position: absolute; z-index: 2; left: 0; right: 0; top: 50%; translate: 0 -50%; text-align: center; }
+.anchor .above { position: absolute; left: 50%; translate: -50% 0; bottom: calc(100% + var(--S) * var(--gap-above, .05)); white-space: nowrap; }
+.anchor .below { position: absolute; left: 50%; translate: -50% 0; top: calc(100% + var(--S) * var(--gap-below, .04)); width: var(--below-w, 26ch); max-width: none; }

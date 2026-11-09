@@ -1,0 +1,234 @@
+@import url("../../design-system/tokens.css");
+@import url("../../skills/landing-page/page-base.css");
+
+/* ==========================================================================
+   Bulbul V4 Flash landing page. Composition only: every block, type size and
+   spacing value comes from page-base.css and the responsive tokens.
+   Media queries here recompose (order, columns, alignment), never just resize.
+   Colour world: Bulbul (pink / maroon), with the model-07 lotus shared with
+   Meta banner 1 so the page and the banners read as one family.
+   ========================================================================== */
+
+[lang="hi"], [lang="bn"] { font-family: var(--font-indic); }
+
+/* ---------- 2. Hero ---------- */
+.product-hero { text-align: center; padding-bottom: calc(var(--section-gap) / 3); }
+.hero-grid { display: grid; gap: 40px; }
+.hero-copy { display: grid; justify-items: center; }
+.hero-copy .overline { margin-bottom: 16px; }
+.hero-copy .version { margin-top: 16px; }
+.hero-copy .subhead { margin-top: 20px; max-width: 34ch; }
+.hero-copy .btn-pair { margin-top: 32px; }
+
+/* Art: the lotus, nested two deep, as-is, on a canvas between its own stops */
+.hero-art {
+  position: relative; isolation: isolate; overflow: hidden; margin: 0;
+  aspect-ratio: 4 / 3; border-radius: var(--radius-3xl);
+  background: var(--sr-orange-600);   /* solid, darker (by request) than model-06's light tip colour, so the corners blend (by request, no gradient) */
+  /* Wide-format layering (campaign.md): 3 layers sized from the panel width */
+  --stack-w: 120%; --stack-step: 62%;
+}
+.hero-art-caption {
+  position: absolute; left: 16px; right: 16px; bottom: 16px;
+  display: grid; gap: 2px; padding: 12px 16px; text-align: left;
+  border-radius: var(--radius-2xl);
+  background: rgb(255 255 255 / .78);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.hero-art-caption .lang { font-size: var(--text-body); line-height: 1.5; color: var(--color-tx); }
+.hero-art-caption .meta-light { font-size: var(--text-label); color: var(--color-tx-tertiary); }
+
+/* Tablet: art becomes a wide landscape panel under the copy */
+@media (min-width: 768px) {
+  .hero-art { aspect-ratio: 2 / 1; --stack-w: 137.5%; --stack-step: 125%; }   /* visible shape = 110% of the panel (model-06 fills 80% of its box) */
+  .hero-copy .subhead { max-width: 40ch; }
+}
+/* Desktop: still one centred column, like sarvam.ai; the art becomes a wide panel below */
+@media (min-width: 1024px) {
+  .hero-grid { gap: 56px; }
+  .hero-copy .subhead { max-width: 44ch; }
+  /* 2:1, narrower than the page and centred (reference: sarvam.ai blog hero art) */
+  .hero-art { aspect-ratio: 2 / 1; width: min(100%, 960px); margin-inline: auto; --stack-w: 137.5%; --stack-step: 125%; }   /* visible shape = 110% of the panel (model-06 fills 80% of its box) */
+}
+
+/* ---------- 3. Proof strip: shared block in page-base.css ---------- */
+
+/* ---------- 4. Demo ---------- */
+/* Full section gap above the demo, so the proof strip reads as its own band (by request) */
+.section.demo { padding-top: var(--section-gap); }
+.demo .tabs { margin-bottom: 32px; }
+@media (min-width: 768px) { .demo .tabs { justify-content: center; } }
+.demo-panel { display: grid; gap: 24px; padding-top: 32px; border-top: 1px solid var(--color-st-secondary); }
+.demo-panel[hidden] { display: none; }
+.demo-art { display: grid; place-items: center; }
+.demo-art img { width: min(200px, 56%); aspect-ratio: 1; }
+.demo-body { display: grid; gap: 12px; align-content: start; }
+.demo-title { font-family: var(--font-season-mix); font-weight: var(--fw-regular); font-size: var(--text-h3); line-height: 1.2; letter-spacing: -0.015em; }
+.transcript { display: grid; gap: 14px; margin-top: 12px; padding: 20px 0 0; border-top: 1px solid var(--color-st-secondary); list-style: none; }
+.transcript li { text-wrap: pretty; display: grid; gap: 4px; font-size: clamp(17px, .33vw + 15.8px, 20px); line-height: 1.6; color: var(--color-tx); }
+.transcript li + li { color: var(--color-tx-tertiary); }
+.transcript .who { font-family: var(--font-matter); font-size: var(--text-label); color: var(--color-tx-tertiary); }
+.demo-listen { margin-top: 24px; }
+/* Tablet: art left, script right */
+@media (min-width: 768px) {
+  .demo-panel { grid-template-columns: 2fr 3fr; align-items: center; gap: 40px; }
+  .demo-art img { width: min(280px, 90%); }
+  .transcript li { grid-template-columns: 72px 1fr; gap: 12px; align-items: baseline; }
+}
+@media (min-width: 1024px) {
+  .demo-panel { grid-template-columns: 4fr 8fr; gap: 64px; padding-top: 48px; }
+  .demo-art img { width: min(340px, 100%); }
+}
+
+/* ---------- 5. Capabilities ---------- */
+.cap-grid .card-pastel { min-height: 240px; display: grid; align-content: start; gap: 12px; }
+.cap-grid .card-pastel > :not(img) { max-width: 32ch; }
+.cap-grid .motif-corner { --motif-w: 46%; --motif-dx: 22%; --motif-dy: 30%; }
+@media (min-width: 768px) { .cap-grid .card-pastel { min-height: 280px; } }
+@media (min-width: 1024px) { .cap-grid .card-pastel { min-height: 300px; } .cap-grid .motif-corner { --motif-w: 40%; } }
+
+/* ---------- 6. Developers ---------- */
+.dev .head-center .chips { justify-content: center; margin-top: 8px; }
+.dev-body { max-width: 880px; margin-inline: auto; display: grid; gap: 20px; }
+.dev-link { text-align: center; }
+.code {
+  min-width: 0; border-radius: var(--radius-2xl); overflow: hidden;
+  background: var(--code-bg); border: 1px solid var(--color-st);
+}
+.code-head {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--code-header-bg); border-bottom: 1px solid var(--color-st);
+}
+.code-tab { padding: 10px 16px; font-size: var(--text-label); font-weight: var(--fw-medium); color: var(--color-tx-tertiary); border-top: 2px solid transparent; }
+.code-tab.is-active { color: var(--color-tx); border-top-color: var(--sr-indigo-600); background: var(--code-bg); }
+.code-file { padding: 10px 16px; font: 400 var(--text-label) / 1.55 var(--font-matter-mono); color: var(--color-tx-tertiary); }
+.code pre {
+  margin: 0; padding: 20px; overflow-x: auto;
+  font: 400 14px / 1.7 var(--font-matter-mono), var(--font-indic); color: var(--code-fg);
+}
+.code .k { color: var(--code-keyword); }
+.code .f { color: var(--code-function); }
+.code .s { color: var(--code-string); }
+@media (min-width: 768px) { .code pre { font-size: 15px; padding: 24px 28px; } }
+
+
+/* ---------- 7. Use cases ---------- */
+.uc .card-dark { min-height: 400px; }
+.uc .motif-rise { --motif-w: 115%; --motif-sink: 48%; }
+/* Desktop: four cards fit, so the carousel becomes a full-width row of four */
+@media (min-width: 1024px) {
+  .uc .rail { grid-auto-columns: calc((min(100vw * .8333, var(--page-max)) - 3 * var(--grid-gap)) / 4); overflow: visible; }
+}
+
+/* ---------- 8. Pricing, promo, strip ---------- */
+.price-grid { display: grid; gap: 32px; align-items: center; }
+.price-grid { max-width: 1000px; margin-inline: auto; }
+.price-copy { display: grid; gap: 20px; align-content: center; }
+.price-card { padding: 32px 24px; border-radius: var(--radius-3xl); display: grid; gap: 4px; }
+.price { display: flex; align-items: baseline; gap: 14px; margin-top: 8px; }
+.price .was { font-family: var(--font-season-mix); font-size: 32px; color: var(--color-tx-tertiary); text-decoration-thickness: 1.5px; }
+.price-card .unit { font-size: var(--text-body); color: var(--color-tx-secondary); }
+.price-card .btn-pair { justify-content: flex-start; margin-top: 28px; }
+/* Below desktop the card is narrow: buttons stack at full width instead of wrapping unevenly */
+@media (max-width: 1023.98px) { .price-card .btn-pair { flex-direction: column; align-items: stretch; } }
+/* Tablet up: copy beside the card */
+@media (min-width: 768px) {
+  .price-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .price-card { padding: 40px; }
+}
+
+.band-promo { margin-top: var(--section-head-gap); display: grid; align-content: start; min-height: 420px; }
+.promo-copy { position: relative; z-index: 1; display: grid; gap: 16px; max-width: 34rem; }
+.promo-cta { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 16px; margin-top: 8px; }
+.promo-cta .meta { font-size: var(--text-label); }
+/* Mobile: the lotus rises from the bottom; desktop: it bleeds off the right edge */
+.promo-motif {
+  position: absolute; z-index: 0; pointer-events: none; aspect-ratio: 1; max-width: none;
+  width: 90%; left: 50%; bottom: 0; translate: -50% 52%;
+}
+/* Tablet: copy keeps the left 60%, the lotus sits in the right corner */
+@media (min-width: 768px) {
+  .band-promo { min-height: 300px; align-content: center; }
+  .promo-copy { max-width: 58%; }
+  .promo-motif { width: 44%; left: auto; right: 0; bottom: auto; top: 50%; translate: 26% -50%; }
+}
+/* Desktop: a larger lotus bleeding off the right edge */
+@media (min-width: 1024px) {
+  .promo-copy { max-width: 34rem; }
+  .promo-motif { width: 42%; translate: 12% -50%; }
+}
+
+.strip {
+  margin-top: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  padding: 16px 20px; border-radius: var(--radius-2xl); border: 1px solid var(--color-st-secondary);
+  background: var(--gradient-surface-wash); font-size: var(--text-ui); color: var(--color-tx-secondary);
+}
+.strip strong { font-weight: var(--fw-medium); color: var(--color-tx); }
+.strip .link-arrow { min-height: 32px; white-space: nowrap; }
+@media (min-width: 768px) {
+  .strip { flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; background: linear-gradient(90deg, var(--color-white), var(--sr-indigo-50)); }
+}
+
+/* ---------- 11. CTA band ---------- */
+.cta .band-cta { min-height: 440px; }
+/* One large lotus holds the copy and bleeds past top and bottom; echoes step outward
+   to fill the width (reference: brand-06 / sarvam.ai covers). Sized in px from the band's fixed height so the headline always sits inside the main lotus body. */
+.cta .motif-stack { --stack-w: 600px; --stack-step: 320px; }       /* phone: side points stay in view */
+/* Tablet and up: sized as a share of the band WIDTH, so the composition is identical at any
+   band width (640 → 1400px): main disc 76%, each echo +26%; both echo edges stay inside the band. */
+@media (min-width: 768px)  { .cta .motif-stack { --stack-w: 96%; --stack-step: 30%; } }   /* band ~1.45:1 */
+@media (min-width: 1024px) { .cta .motif-stack { --stack-w: 86%; --stack-step: 28%; } }   /* band ~1.8:1 */
+@media (min-width: 1280px) { .cta .motif-stack { --stack-w: 76%; --stack-step: 26%; } }   /* band 2.2:1 and wider */
+.cta-copy { position: relative; z-index: 1; display: grid; justify-items: center; gap: 28px; }
+/* Season Mix, large (by request). Dark text: model-02 is a light motif (white to periwinkle) */
+.cta-copy .display { color: var(--color-tx); font-family: var(--font-season-mix); font-weight: var(--fw-semibold); font-size: clamp(42px, 2vw + 34.5px, 58px); line-height: 1.08; letter-spacing: -0.025em; }
+@media (min-width: 1024px) { .cta .band-cta { min-height: 480px; } }
+
+/* Laptop and up: page-specific sizes (the system tokens carry the approved type scale) */
+@media (min-width: 1024px) {
+  /* hard-coded sizes on this page */
+  .transcript li { font-size: 22px; }
+  .code pre { font-size: 17px; }
+  .price .was { font-size: 34px; }                    /* number: +2 */
+  .cta-copy .display { font-size: clamp(56px, 1.25vw + 46px, 64px); }
+  /* give the larger text room */
+  .hero-copy .subhead { max-width: 46ch; }
+  .cap-grid .card-pastel > :not(img) { max-width: 28ch; }
+  .cap-grid .card-pastel { min-height: 320px; }
+  .uc .card-dark { min-height: 420px; }
+  .transcript li { grid-template-columns: 88px 1fr; }
+}
+
+/* Small laptops (1024–1279): the larger type needs room. Recompose rather than squeeze. */
+@media (min-width: 1024px) and (max-width: 1279.98px) {
+  /* Use cases: stay a carousel, two and a half cards in view */
+  .uc .rail { overflow-x: auto; grid-auto-columns: 40%; }
+}
+
+/* Centred layout details */
+.demo-listen { text-align: center; }
+@media (min-width: 768px) {
+  .hero-art-caption { left: 50%; right: auto; translate: -50% 0; width: min(560px, calc(100% - 32px)); text-align: center; }
+}
+
+/* Page-specific headings use the system heading weight (medium) */
+.demo-title, .cta-copy .display { font-weight: var(--fw-medium); }
+
+/* Closing band on phones: keep the desktop's wide layered composition, scaled down
+   (reference: sarvam.ai brand page on mobile). Landscape 16:10, width-based layering. */
+@media (max-width: 767.98px) {
+  .cta .band-cta { min-height: 0; aspect-ratio: 16 / 10; padding: 20px; }
+  .cta .motif-stack { --stack-w: 96%; --stack-step: 30%; }
+  .cta-copy { gap: 14px; }
+  .cta-copy .display { font-size: clamp(26px, 6vw + 4px, 34px); line-height: 1.08; }
+  .cta-copy .btn { min-height: 40px; padding: 8px 18px; font-size: 15px; }
+}
+
+/* Hero art on phones: the desktop's wide 2:1 composition, scaled down (same layering),
+   not a taller card. The caption becomes a compact strip so the art stays visible. */
+@media (max-width: 767.98px) {
+  .hero-art { aspect-ratio: 2 / 1; --stack-w: 137.5%; --stack-step: 125%; }
+  .hero-art-caption { left: 50%; right: auto; bottom: 10px; translate: -50% 0; width: calc(100% - 20px); padding: 6px 12px; text-align: center; gap: 0; border-radius: var(--radius-xl); }
+  .hero-art-caption .lang { font-size: 14px; line-height: 1.45; }
+  .hero-art-caption .meta-light { font-size: 11px; }
+}

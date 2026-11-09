@@ -1,0 +1,58 @@
+<!doctype html>
+<!--
+  Sarvam banner starter. Copy to banners/<meta|linkedin>/<yyyy-mm-dd>-<slug>/index.html and change
+  the paths to ../../../. One .artboard per size, each with data-name (PNG file name) and data-size.
+  Record family, axis, ground, form and text colour in this comment (SKILL.md step 3).
+  Two starters: a centred gateway title card and an edge-aligned product-register card.
+  Built examples of every family: campaign.md §3.
+-->
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<title>Sarvam banner template</title>
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<link rel="stylesheet" href="banner-base.css">
+<style>
+  /* Banner-specific values only: tokens and --S multiples. */
+  .title-card { background: linear-gradient(180deg, var(--sr-indigo-200), var(--sr-indigo-400)); }
+  .title-card .stack { --stack-w: 1.2; --stack-step: .6; }
+  .title-card .headline { font-size: calc(var(--S) * .1); color: var(--sr-indigo-950); }
+
+  .product { background: linear-gradient(180deg, var(--sr-orange-50), var(--sr-orange-100)); }
+  .product .safe { right: auto; width: 54%; }
+  .product .wordmark { align-self: flex-start; }
+  .product .kicker { margin-top: auto; font-size: calc(var(--S) * .032); color: var(--sr-pink-700); }
+  .product .headline { margin-top: calc(var(--S) * .03); font-size: calc(var(--S) * .1); }
+  .product .stack { --stack-w: .9; --stack-step: .42; left: 66%; }
+</style>
+</head>
+<body>
+
+<!-- Gateway title card · centred · motif is the ground -->
+<section class="artboard grain title-card" data-name="template-title-card-1080x1350" data-size="1080x1350">
+  <div class="stack" aria-hidden="true">
+    <img class="layer" style="--n:2" src="../../assets/brand/motifs/models/model-02.svg" alt="">
+    <img class="layer" style="--n:1" src="../../assets/brand/motifs/models/model-02.svg" alt="">
+    <img class="layer" style="--n:0" src="../../assets/brand/motifs/models/model-02.svg" alt="">
+  </div>
+  <img class="wordmark top-mark" src="../../assets/brand/logos/sarvam-wordmark-black.svg" alt="Sarvam">
+  <div class="anchor">
+    <h1 class="headline">AI for all<br>from&nbsp;India</h1>
+  </div>
+</section>
+
+<!-- Product register · edge-aligned · motif fades off the right edge -->
+<section class="artboard grain product" data-name="template-product-1200x627" data-size="1200x627">
+  <div class="stack fade" aria-hidden="true">
+    <img class="layer" style="--n:1" src="../../assets/brand/motifs/models/model-01.svg" alt="">
+    <img class="layer" style="--n:0" src="../../assets/brand/motifs/models/model-01.svg" alt="">
+  </div>
+  <div class="safe">
+    <img class="wordmark" src="../../assets/brand/logos/sarvam-wordmark-black.svg" alt="Sarvam">
+    <p class="kicker">Product · Category</p>
+    <h1 class="headline">One short,<br>strong&nbsp;message.</h1>
+  </div>
+</section>
+
+</body>
+</html>

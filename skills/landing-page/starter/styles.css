@@ -1,0 +1,102 @@
+@import url("../../design-system/tokens.css");
+@import url("../../skills/landing-page/page-base.css");
+
+/* ==========================================================================
+   Saaras V4 (Speech to Text) landing page. Composition only: the type scale,
+   hero, proof strip, code block, strip and closing band all come from
+   page-base.css. This file sets the colour world (Saaras: indigo to lilac)
+   and the components new to this page: output modes, the tagged transcript,
+   the language grid and the developer feature list.
+   ========================================================================== */
+
+/* Hero art: model-02 (white to periwinkle) on its own periwinkle */
+/* model-02 is round and fills its panel at the default 110% visible size, so it
+   runs smaller here (about 80% visible) with a wider echo, keeping its scallops in view */
+.hero-art { --art-bg: var(--sr-indigo-400); --stack-w: 100%; --stack-step: 52%; }
+.hero-note { margin-top: 14px; }
+
+/* ---------- Output modes ---------- */
+.mode-panel {
+  max-width: 880px; margin-inline: auto; display: grid; gap: 12px; text-align: center;
+  padding: 32px 24px; border-radius: var(--radius-3xl);
+  background: var(--color-white); border: 1px solid var(--color-st-secondary);
+}
+.mode-panel[hidden] { display: none; }
+.mode-out { font-size: clamp(22px, 1.5vw + 16px, 34px); line-height: 1.35; color: var(--color-tx); text-wrap: balance; }
+@media (min-width: 768px) { .mode-panel { padding: 48px 40px; } }
+
+/* ---------- Tagged transcript ---------- */
+.tagged { max-width: 960px; margin-inline: auto; padding: 24px 20px; border-radius: var(--radius-3xl); display: grid; gap: 20px; }
+.tagged-lines { list-style: none; padding: 0; display: grid; gap: 18px; }
+.tagged-lines li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: baseline; }
+.tagged-lines .t { font-size: var(--text-label); color: var(--color-tx-tertiary); font-variant-numeric: tabular-nums; }
+.tagged-lines p { font-size: clamp(18px, .66vw + 15.5px, 24px); line-height: 2.1; color: var(--color-tx); }
+.tagged mark {
+  position: relative; padding: 2px 8px; border-radius: var(--radius-md);
+  background: var(--tag-bg); color: var(--tag-ink); white-space: nowrap;
+}
+/* the tag kind sits as a small label above the word */
+.tagged mark::before {
+  content: attr(data-k); position: absolute; left: 0; top: -1.15em; white-space: nowrap;
+  font: var(--fw-medium) 10px/1 var(--font-matter); letter-spacing: .06em; text-transform: uppercase; color: var(--tag-ink);
+}
+mark[data-k="Proper noun"]  { --tag-bg: var(--sr-indigo-100); --tag-ink: var(--sr-indigo-800); }
+mark[data-k="Number"]       { --tag-bg: var(--sr-green-100);  --tag-ink: var(--sr-green-800); }
+mark[data-k="Entity"]       { --tag-bg: var(--sr-pink-100);   --tag-ink: var(--sr-pink-700); }
+mark[data-k="Code switch"]  { --tag-bg: var(--sr-orange-100); --tag-ink: var(--sr-orange-900); }
+mark[data-k="Abbreviation"] { --tag-bg: var(--sr-yellow-100); --tag-ink: var(--sr-orange-900); }
+mark[data-k="Phone number"] { --tag-bg: var(--sr-red-50);     --tag-ink: var(--sr-red-600); }
+.legend { list-style: none; padding: 16px 0 0; border-top: 1px solid var(--color-st-secondary); display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: var(--text-meta); color: var(--color-tx-tertiary); }
+.legend li { display: inline-flex; align-items: center; gap: 8px; }
+.legend .k { width: 12px; height: 12px; border-radius: 3px; }
+.k-pn { background: var(--sr-indigo-100); } .k-num { background: var(--sr-green-100); } .k-ent { background: var(--sr-pink-100); }
+.k-cs { background: var(--sr-orange-100); } .k-abbr { background: var(--sr-yellow-100); } .k-ph { background: var(--sr-red-50); }
+/* Phones: colour-coded tags with the legend below; the floating labels collide when lines wrap */
+@media (max-width: 767.98px) {
+  .tagged mark::before { content: none; }
+  .tagged-lines p { line-height: 1.9; }
+}
+@media (min-width: 768px) {
+  .tagged { padding: 40px 48px; }
+  .tagged-lines li { grid-template-columns: 56px 1fr; }
+}
+
+/* ---------- Capabilities ---------- */
+.cap-grid .card-pastel { min-height: 280px; display: grid; align-content: start; gap: 12px; }
+.cap-grid .card-pastel > :not(img) { max-width: 34ch; }
+.cap-grid .sample { margin-top: 8px; font-size: var(--text-body-sm); line-height: 1.6; color: var(--color-tx); }
+.cap-grid .motif-corner { --motif-w: 40%; --motif-dx: 24%; --motif-dy: 32%; }
+@media (min-width: 1024px) { .cap-grid .card-pastel { min-height: 340px; } }
+
+/* ---------- Use cases ---------- */
+.uc-grid .card-dark { min-height: 380px; }
+.uc .motif-rise { --motif-w: 110%; --motif-sink: 60%; }
+.uc-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.uc-list li { padding: 4px 12px; border-radius: var(--radius-full); border: 1px solid rgb(255 255 255 / .25); font-size: var(--text-meta); color: var(--color-tx-inverse); }
+@media (min-width: 1024px) { .uc-grid .card-dark { min-height: 440px; } }
+
+/* ---------- Developers ---------- */
+.dev .head-center .chips { justify-content: center; margin-top: 8px; }
+.dev-grid { display: grid; gap: 40px; }
+.feature-list { list-style: none; padding: 0; display: grid; gap: 22px; }
+.feature-list li { display: grid; gap: 4px; padding-left: 20px; border-left: 2px solid var(--sr-indigo-200); }
+@media (min-width: 1024px) { .dev-grid { grid-template-columns: 5fr 7fr; gap: 56px; align-items: center; } }
+
+/* ---------- Languages ---------- */
+.lang-grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.lang-grid li {
+  display: grid; gap: 4px; padding: 18px 16px; border-radius: var(--radius-2xl);
+  background: var(--color-white); border: 1px solid var(--color-st-secondary);
+}
+.lang-grid .script { font-size: clamp(24px, .9vw + 20.6px, 30px); line-height: 1.4; color: var(--color-tx); }
+.lang-grid .code-name { font-size: var(--text-meta); color: var(--color-tx-tertiary); }
+@media (min-width: 768px) { .lang-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 1280px) { .lang-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+
+/* ---------- FAQ ---------- */
+.faq-list { max-width: 880px; margin-inline: auto; }
+.faq-list summary { font-size: var(--text-value); }
+.faq .strip { max-width: 880px; margin: 32px auto 0; }
+
+/* ---------- Closing band: model-10 on its own mid indigo (indigo-700), white text ---------- */
+.cta .band-cta { --cta-ink: var(--color-tx-inverse); }

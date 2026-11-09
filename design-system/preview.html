@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarvam design system: preview</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500&family=Noto+Sans+Bengali:wght@400&family=Noto+Sans+Tamil:wght@400&family=Noto+Sans+Telugu:wght@400&family=Noto+Sans+Kannada:wght@400&family=Noto+Sans+Malayalam:wght@400&family=Noto+Sans+Gurmukhi:wght@400&family=Noto+Sans+Oriya:wght@400&family=Noto+Sans+Gujarati:wght@400&family=Noto+Naskh+Arabic:wght@400&display=swap">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--color-sf);color:var(--color-tx);font:var(--fw-regular) 16px/1.6 var(--font-matter);-webkit-font-smoothing:antialiased}
+  .wrap{width:88%;max-width:var(--spacing-width-mx);margin:0 auto;padding:64px 0 120px}
+  @media(min-width:768px){.wrap{width:83.333%}}
+  h1{font:var(--fw-regular) clamp(44px,2.6vw + 34px,64px)/1.05 var(--font-season-mix);letter-spacing:-.025em;text-wrap:balance}
+  h2{font:var(--fw-medium) clamp(28px,1vw + 24px,36px)/1.2 var(--font-season-mix);letter-spacing:-.02em;margin:96px 0 8px}
+  h3{font:var(--fw-medium) 18px/1.3 var(--font-matter);margin:32px 0 12px}
+  .lead{color:var(--color-tx-tertiary);max-width:60ch}
+  .overline{font:var(--fw-medium) 12px/1.33 var(--font-matter);letter-spacing:.1em;text-transform:uppercase;color:var(--color-tx-tertiary)}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .sw{border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--color-st-secondary);background:#fff;font-size:12px}
+  .sw i{display:block;height:64px}
+  .sw b{display:block;padding:8px 10px 0;font-weight:var(--fw-medium)}
+  .sw span{display:block;padding:0 10px 8px;color:var(--color-tx-tertiary);font-family:var(--font-matter-mono)}
+  .scale{display:grid;grid-template-columns:72px repeat(11,1fr);gap:2px;font-size:11px;align-items:center}
+  .scale i{height:36px;border-radius:4px}
+  .hero{position:relative;overflow:hidden;border-radius:var(--radius-4xl);background:#fff;border:1px solid var(--color-st-secondary);padding:120px 24px 96px;text-align:center;margin-top:32px}
+  .hero img.g{position:absolute;left:50%;top:-128%;width:2400px;max-width:none;translate:-50% 0;pointer-events:none}
+  .hero::before{content:"";position:absolute;inset:0 0 auto;height:112px;background:linear-gradient(#fff,transparent);z-index:1}
+  .hero>*{position:relative;z-index:2}
+  .orn{display:block;margin:0 auto;height:32px;aspect-ratio:228/35;background:var(--sr-indigo-300);-webkit-mask:url(../assets/brand/motifs/ornament.svg) center/contain no-repeat;mask:url(../assets/brand/motifs/ornament.svg) center/contain no-repeat}
+  .eyebrow{display:inline-flex;flex-direction:column;gap:10px;margin:28px 0 24px}
+  .eyebrow::before,.eyebrow::after{content:"";height:1px;background:var(--gradient-hairline)}
+  .eyebrow span{padding:0 32px;color:var(--sr-indigo-900);letter-spacing:.025em}
+  .sub{color:var(--color-tx-secondary);font-size:clamp(16px,.5vw + 14px,20px);line-height:1.75;margin:20px auto 32px;max-width:640px}
+  .btns{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;min-height:44px;padding:14px 24px;border-radius:var(--radius-full);font:var(--fw-medium) 16px/1.2 var(--font-season-mix);border:0;cursor:pointer;transition:transform var(--duration-fast) var(--ease-brand)}
+  .btn:active{transform:scale(.97)}
+  .btn:focus-visible{outline:2px solid var(--sr-indigo-600);outline-offset:2px}
+  .btn-p{background:var(--gradient-btn-primary);color:#fff}
+  .btn-s{background:var(--gradient-btn-secondary);color:#1E2033;box-shadow:inset 0 0 0 1px rgba(30,32,51,.14)}
+  .btn-sm{min-height:40px;padding:8px 20px;font:var(--fw-medium) 15px/1.5 var(--font-matter)}
+  .btn-ps{background:var(--color-sr-slate);color:#fff;box-shadow:var(--shadow-button-dark)}
+  .btn-ss{background:var(--color-sf-secondary);color:var(--color-tx);box-shadow:var(--shadow-button-light)}
+  .row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .tag{display:inline-flex;gap:6px;align-items:center;padding:8px 14px;border-radius:var(--radius-xl);font:var(--fw-semibold) 14px/1 var(--font-matter);border:1px solid}
+  .tabs{display:inline-flex;gap:8px;flex-wrap:wrap}
+  .tab{padding:8px 14px;border-radius:var(--radius-full);font-size:14px;background:var(--color-sf-secondary)}
+  .tab.on{background:var(--color-sr-slate);color:#fff}
+  .grounds{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+  .gr{position:relative;overflow:hidden;border-radius:var(--radius-3xl);min-height:260px;padding:28px;color:var(--color-tx-inverse)}
+  .gr h4{font:var(--fw-regular) 28px/1.1 var(--font-season-mix);letter-spacing:-.02em;position:relative;z-index:2}
+  .gr p{font-size:14px;margin-top:8px;position:relative;z-index:2}
+  .gr .rise{position:absolute;left:50%;bottom:-78%;width:120%;aspect-ratio:1;border-radius:50%;translate:-50% 0}
+  .grain{background-blend-mode:soft-light,normal}
+  .motifs{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(88px,1fr))}
+  .motifs figure{background:#fff;border:1px solid var(--color-st-secondary);border-radius:var(--radius-xl);padding:12px;text-align:center;font-size:11px;color:var(--color-tx-tertiary)}
+  .motifs img{width:100%;height:auto}
+  .shapes{display:flex;gap:24px;align-items:flex-end;flex-wrap:wrap}
+  .type-row{display:grid;grid-template-columns:180px 1fr;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--color-st-secondary)}
+  .type-row small{color:var(--color-tx-tertiary);font-size:12px}
+  .indic{display:flex;flex-wrap:wrap;gap:12px 28px;font-size:24px;color:var(--color-tx-secondary)}
+  .marks{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+  .marks div{border-radius:var(--radius-2xl);height:140px;display:grid;place-items:center;border:1px solid var(--color-st-secondary)}
+  .echo-demo{position:relative;height:460px;border-radius:var(--radius-3xl);overflow:hidden;isolation:isolate;background:linear-gradient(180deg,var(--sr-red-500),var(--sr-indigo-200))}
+  .echo-demo .e{position:absolute;left:50%;top:50%;width:calc(560px + var(--n)*330px);max-width:none;aspect-ratio:1;translate:-50% -50%}
+  .echo-demo h4{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:20px;font:var(--fw-semibold) clamp(28px,3vw,44px)/1.1 var(--font-matter);color:var(--color-tx-inverse);letter-spacing:-.015em;text-align:center}
+  .echo-demo h4 img{height:22px}
+  .shapes .m{width:170px;aspect-ratio:1;display:grid;place-items:end center;font-size:12px;color:var(--color-tx-tertiary)}
+  .shapes .m img{width:150px;aspect-ratio:1}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="overline">Sarvam design system · preview</p>
+  <h1 style="margin-top:12px">AI for all from&nbsp;India</h1>
+  <p class="lead" style="margin-top:16px">Everything on this page is drawn from <code>tokens.css</code> and <code>assets/brand/</code>. If something looks wrong here, it'll look wrong in every banner and page. Open it through <code>npm run serve</code> (http://localhost:8080/design-system/preview.html). Browsers block CSS masks on <code>file://</code>, so gateway shapes and the ornament vanish if you double-click the file.</p>
+
+  <!-- Hero lockup -->
+  <section class="hero" aria-label="Hero lockup">
+    <img class="g" src="../assets/brand/hero-gradient.webp" alt="">
+    <span class="orn" aria-hidden="true"></span>
+    <div class="eyebrow"><span>India's Sovereign AI Platform</span></div>
+    <h1>AI for all from&nbsp;India</h1>
+    <p class="sub">Built on sovereign compute. Powered by frontier-class models. Delivering population-scale impact.</p>
+    <div class="btns"><button class="btn btn-p">Sign up</button><button class="btn btn-s">Contact Us</button></div>
+  </section>
+
+  <h2>Marks</h2>
+  <p class="lead">Official files only. Black on light, white on dark. Never together.</p>
+  <div class="marks" style="margin-top:24px">
+    <div style="background:#fff"><img src="../assets/brand/logos/sarvam-wordmark-black.svg" alt="Sarvam wordmark" height="32"></div>
+    <div style="background:var(--ground-night)"><img src="../assets/brand/logos/sarvam-wordmark-white.svg" alt="" height="32"></div>
+    <div style="background:#fff"><img src="../assets/brand/logos/sarvam-logomark-black.svg" alt="Sarvam monogram" height="80"></div>
+    <div style="background:var(--grain),var(--spectrum-dawn)" class="grain"><img src="../assets/brand/logos/sarvam-logomark-white.svg" alt="" height="80"></div>
+  </div>
+
+  <h2>Neutrals</h2>
+  <div class="grid" style="margin-top:24px">
+    <div class="sw"><i style="background:var(--color-sf)"></i><b>sf</b><span>#FCFCFC</span></div>
+    <div class="sw"><i style="background:var(--color-sf-secondary)"></i><b>sf-secondary</b><span>#F5F5F5</span></div>
+    <div class="sw"><i style="background:var(--color-sf-tertiary)"></i><b>sf-tertiary</b><span>#F0F0F0</span></div>
+    <div class="sw"><i style="background:var(--color-st)"></i><b>st</b><span>#E6E6E6</span></div>
+    <div class="sw"><i style="background:var(--color-tx)"></i><b>tx</b><span>#1F1F1F</span></div>
+    <div class="sw"><i style="background:var(--color-tx-secondary)"></i><b>tx-secondary</b><span>#3D3D3D</span></div>
+    <div class="sw"><i style="background:var(--color-tx-tertiary)"></i><b>tx-tertiary</b><span>#666666</span></div>
+    <div class="sw"><i style="background:var(--color-sr-slate)"></i><b>sr-slate</b><span>#2A2C33</span></div>
+    <div class="sw"><i style="background:var(--color-br-blue)"></i><b>br-blue</b><span>#393CC1</span></div>
+    <div class="sw"><i style="background:var(--color-br-orange)"></i><b>br-orange</b><span>#D5650F</span></div>
+  </div>
+
+  <h2>Brand scales</h2>
+  <div id="scales" style="margin-top:24px;display:grid;gap:8px"></div>
+
+  <h2>Cultural palette</h2>
+  <div class="grid" style="margin-top:24px">
+    <div class="sw"><i style="background:var(--cult-door-green)"></i><b>door green</b><span>#293A18</span></div>
+    <div class="sw"><i style="background:var(--cult-bandhani)"></i><b>bandhani</b><span>#B1205F</span></div>
+    <div class="sw"><i style="background:var(--cult-marigold)"></i><b>marigold</b><span>#FEBF2B</span></div>
+    <div class="sw"><i style="background:var(--cult-brocade)"></i><b>brocade</b><span>#C11317</span></div>
+    <div class="sw"><i style="background:var(--cult-sandstone)"></i><b>sandstone</b><span>#9E5F0A</span></div>
+  </div>
+
+  <h2>Spectrum</h2>
+  <p class="lead">Full-bleed campaign fields, always with grain.</p>
+  <div class="grounds" style="margin-top:24px">
+    <div class="gr grain" style="background:var(--grain),var(--spectrum-dawn)"><h4>Dawn</h4><p>--spectrum-dawn</p></div>
+    <div class="gr grain" style="background:var(--grain),var(--spectrum-dusk)"><h4>Dusk</h4><p>--spectrum-dusk</p></div>
+    <div class="gr grain" style="background:var(--grain),var(--spectrum-gateway)"><h4>Gateway</h4><p>--spectrum-gateway</p></div>
+  </div>
+
+  <h2>Deep grounds</h2>
+  <p class="lead">One ground, one accent tint, one form of light.</p>
+  <div class="grounds" style="margin-top:24px">
+    <div class="gr" style="background:var(--ground-night)"><h4>A gateway between people and intelligence.</h4><p style="color:var(--on-night-accent)">night · accent orange-300</p></div>
+    <div class="gr" style="background:var(--ground-indigo)"><h4>A teacher</h4><p style="color:var(--on-indigo-accent)">indigo · accent indigo-200</p><div class="rise" style="background:radial-gradient(circle at 50% 22%,#E3C7FF,var(--sr-indigo-700) 50%,var(--sr-indigo-900))"></div></div>
+    <div class="gr" style="background:var(--ground-maroon)"><h4>50% off Bulbul V4 Flash</h4><p style="color:var(--on-maroon-accent)">maroon · accent orange-300</p><div class="rise" style="background:radial-gradient(circle at 50% 22%,var(--sr-orange-300),var(--sr-pink-400) 50%,var(--sr-pink-700))"></div></div>
+    <div class="gr" style="background:var(--ground-oxblood)"><h4>Who gets to be understood?</h4><p style="color:var(--on-oxblood-accent)">oxblood · accent orange-200</p></div>
+    <div class="gr" style="background:var(--ground-forest)"><h4>A voice agent</h4><p style="color:var(--on-forest-accent)">forest · accent green-200</p><div class="rise" style="background:radial-gradient(circle at 50% 22%,var(--sr-green-100),var(--sr-green-400) 50%,var(--sr-green-700))"></div></div>
+    <div class="gr" style="background:var(--ground-amber)"><h4>Live sports</h4><p style="color:var(--on-amber-accent)">amber · accent yellow-200</p><div class="rise" style="background:radial-gradient(circle at 50% 22%,var(--sr-yellow-100),var(--sr-yellow-400) 50%,var(--sr-yellow-700))"></div></div>
+  </div>
+
+  <h2>Nested gateway</h2>
+  <p class="lead">Gateway title card: the official <code>model-07</code> motif, as-is, nested two deep.</p>
+  <div class="echo-demo" style="margin-top:24px">
+    <img class="e" style="--n:1" src="../assets/brand/motifs/models/model-07.svg" alt=""><img class="e" style="--n:0" src="../assets/brand/motifs/models/model-07.svg" alt="">
+    <h4><img src="../assets/brand/logos/sarvam-wordmark-white.svg" alt="Sarvam">AI for all<br>from India</h4>
+  </div>
+
+  <h2>Motifs as shapes</h2>
+  <p class="lead">Every gateway, frame and window is an official model motif, used as-is. Never repainted, never hand-drawn:</p>
+  <div class="shapes" style="margin-top:24px;display:flex;flex-wrap:wrap;gap:16px">
+    <div class="m"><img src="../assets/brand/motifs/models/model-05.svg" alt="">05 gateway</div>
+    <div class="m"><img src="../assets/brand/motifs/models/model-04.svg" alt="">04 quatrefoil</div>
+    <div class="m"><img src="../assets/brand/motifs/models/model-12.svg" alt="">12 cusped dome</div>
+    <div class="m"><img src="../assets/brand/motifs/models/model-01.svg" alt="">01 pointed quatrefoil</div>
+  </div>
+
+  <h2>Model motifs</h2>
+  <p class="lead">Official, 125×125 grid. One family per composition.</p>
+  <div class="motifs" id="motifs" style="margin-top:24px"></div>
+
+  <h2>Type</h2>
+  <div style="margin-top:24px">
+    <div class="type-row"><small>Hero H1 · Season Mix 425<br>44 → 64 / 1.05 / −0.025em</small><div style="font:var(--fw-regular) clamp(44px,2.6vw + 34px,64px)/1.05 var(--font-season-mix);letter-spacing:-.025em">AI for all from India</div></div>
+    <div class="type-row"><small>Section H2 · Season Mix 525<br>28 → 36 / 1.2 / −0.02em</small><div style="font:var(--fw-medium) clamp(28px,1vw + 24px,36px)/1.2 var(--font-season-mix);letter-spacing:-.02em">Built for the depth of Indian speech</div></div>
+    <div class="type-row"><small>Card title · Matter 525<br>18 → 22 / 1.3</small><div style="font:var(--fw-medium) 22px/1.3 var(--font-matter);letter-spacing:-.015em">Indian English that sounds Indian</div></div>
+    <div class="type-row"><small>Section lead · Matter 425<br>16 → 18 / 1.65 · tertiary</small><div style="font-size:18px;line-height:1.65;color:var(--color-tx-tertiary);max-width:60ch">Not just speaking India's languages, but speaking them the way India does.</div></div>
+    <div class="type-row"><small>Eyebrow · Matter 425<br>14 → 16 / +0.025em · indigo-900</small><div style="color:var(--sr-indigo-900);letter-spacing:.025em">India's Sovereign AI Platform</div></div>
+    <div class="type-row"><small>Overline · Matter 525<br>12 / uppercase / +0.1em</small><div class="overline">India builds with Sarvam</div></div>
+    <div class="type-row"><small>Stat · Matter 525 tabular</small><div style="font:var(--fw-medium) 20px/1.3 var(--font-matter);font-variant-numeric:tabular-nums">10B+ &nbsp;·&nbsp; &lt;100ms &nbsp;·&nbsp; 99.9%</div></div>
+  </div>
+  <h3>Indic scripts, native</h3>
+  <div class="indic"><span lang="hi">हिन्दी</span><span lang="bn">বাংলা</span><span lang="ta">தமிழ்</span><span lang="te">తెలుగు</span><span lang="kn">ಕನ್ನಡ</span><span lang="ml">മലയാളം</span><span lang="pa">ਪੰਜਾਬੀ</span><span lang="or">ଓଡ଼ିଆ</span><span lang="gu">ગુજરાતી</span><span lang="mr">मराठी</span><span lang="ur" dir="rtl">اردو</span></div>
+
+  <h2>Components</h2>
+  <h3>Buttons</h3>
+  <div class="row"><button class="btn btn-p">Sign up</button><button class="btn btn-s">Contact Us</button><button class="btn btn-sm btn-ps">Log In</button><button class="btn btn-sm btn-ss">Contact Us</button><button class="btn btn-sm btn-ps" disabled style="opacity:.4">Disabled</button></div>
+  <h3>Tags</h3>
+  <div class="row">
+    <span class="tag" style="background:var(--sr-indigo-50);border-color:var(--sr-indigo-200);color:var(--sr-indigo-600)">SOC 2 Type I</span>
+    <span class="tag" style="background:var(--sr-green-50);border-color:var(--sr-green-200);color:var(--sr-green-600)">ISO 27001</span>
+    <span class="tag" style="background:var(--sr-orange-50);border-color:var(--sr-orange-200);color:var(--sr-orange-600)">DPDP compliant</span>
+    <span class="tag" style="background:var(--sr-pink-50);border-color:var(--sr-pink-200);color:var(--sr-pink-600)">Role-based access</span>
+    <span class="tag" style="background:var(--sr-yellow-50);border-color:var(--sr-yellow-200);color:var(--sr-yellow-700)">Full audit trail</span>
+  </div>
+  <h3>Pill tabs</h3>
+  <div class="tabs"><span class="tab on">Voice agent</span><span class="tab">Collections</span><span class="tab">Healthcare</span><span class="tab">Telephony</span><span class="tab">Storytelling</span></div>
+</main>
+<script>
+  const hues=['indigo','orange','pink','yellow','green','red','grey'],steps=[50,100,200,300,400,500,600,700,800,900,950];
+  const s=document.getElementById('scales');
+  for(const h of hues){const r=document.createElement('div');r.className='scale';r.innerHTML=`<b style="font-weight:525">${h}</b>`+steps.map(n=>`<i title="--sr-${h}-${n}" style="background:var(--sr-${h}-${n===950&&(h==='green'||h==='red')?1000:n})"></i>`).join('');s.append(r)}
+  const m=document.getElementById('motifs');
+  for(let i=1;i<=16;i++){const n=String(i).padStart(2,'0');m.insertAdjacentHTML('beforeend',`<figure><img src="../assets/brand/motifs/models/model-${n}.svg" alt=""><figcaption>model-${n}</figcaption></figure>`)}
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "sarvam-brand-system",
+  "private": true,
+  "description": "Sarvam AI brand and design system, banners and web pages",
+  "scripts": {
+    "export": "node skills/social-banner/export.js",
+    "serve": "npx --yes http-server . -p 8080 -c-1"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^23.11.1"
+  }
+}

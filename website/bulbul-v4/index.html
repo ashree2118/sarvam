@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulbul V4 Flash · Text to Speech · Sarvam</title>
+<meta name="description" content="Bulbul V4 Flash: expressive, accurate, fast text to speech for Indian languages. ₹10 per 10,000 characters until 12 Nov.">
+<link rel="icon" href="../../assets/brand/logos/sarvam-logomark-black.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500&family=Noto+Sans+Bengali:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="../../skills/landing-page/page-base.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- 1. Header -->
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="https://www.sarvam.ai" aria-label="Sarvam home"><img src="../../assets/brand/logos/sarvam-wordmark-black.svg" alt="Sarvam" width="101" height="16"></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#" aria-current="page">Products</a><a href="#developers">Developers</a><a href="#">Resources</a><a href="#">Company</a>
+    </nav>
+    <div class="actions">
+      <a class="btn btn-dark" href="#">Log In</a>
+      <a class="btn btn-light" href="#">Contact Us</a>
+      <button class="menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+  <div class="menu-sheet" id="menu" hidden>
+    <div class="container">
+      <a class="row" href="#">Products</a><a class="row" href="#developers">Developers</a>
+      <a class="row" href="#">Resources</a><a class="row" href="#">Company</a>
+      <div class="sheet-actions"><a class="btn btn-dark" href="#">Log In</a><a class="btn btn-light" href="#">Contact Us</a></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 2. Hero: product register copy + campaign-register art (the banner family's lotus) -->
+  <section class="hero product-hero" aria-labelledby="hero-title">
+    <div class="hero-halo" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="overline">Text to Speech</p>
+        <h1 class="h1 product" id="hero-title">Bulbul V4</h1>
+        <span class="version">Flash</span>
+        <p class="subhead">Expressive, accurate, fast. Speech that sounds the way India speaks, in Indian languages and Indian&nbsp;English.</p>
+        <div class="btn-pair stack">
+          <a class="btn btn-lg btn-primary" href="#">Get API key</a>
+          <a class="btn btn-lg btn-secondary" href="#">Try the playground</a>
+        </div>
+      </div>
+      <figure class="hero-art" aria-label="Bulbul V4 Flash">
+        <div class="motif-stack" aria-hidden="true">
+          <img class="layer" style="--n:1" src="../../assets/brand/motifs/models/model-06.svg" alt="">
+          <img class="layer" style="--n:0" src="../../assets/brand/motifs/models/model-06.svg" alt="">
+        </div>
+        <figcaption class="hero-art-caption">
+          <span class="lang" lang="hi">नमस्ते! रेल सहायता में आपका स्वागत है।</span>
+          <span class="meta-light">Hindi · hi-IN · 24 kHz · Pace 1.0</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3. Proof strip -->
+  <section class="proof" aria-label="Bulbul V4 Flash at a glance">
+    <div class="container">
+      <dl class="proof-grid">
+        <div><dt>Launch price</dt><dd><span class="metric">₹10</span><span class="unit">per 10,000 characters</span></dd></div>
+        <div><dt>Against Bulbul V3</dt><dd><span class="metric">⅓</span><span class="unit">less, on the same API</span></dd></div>
+        <div><dt>Output</dt><dd><span class="metric">8–48</span><span class="unit">kHz</span></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 4. Demo -->
+  <section class="section demo" aria-labelledby="demo-title">
+    <div class="container">
+      <div class="section-head head-center">
+        <h2 class="h2" id="demo-title">Don't take our word for it.&nbsp;Listen.</h2>
+        <p class="lead">Real scripts, written once and spoken by Bulbul V4 Flash. Pick a situation.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Sample scripts">
+        <button class="tab" role="tab" id="t-rail" aria-controls="p-rail" aria-selected="true">Rail helpline</button>
+        <button class="tab" role="tab" id="t-booking" aria-controls="p-booking" aria-selected="false" tabindex="-1">Booking check</button>
+        <button class="tab" role="tab" id="t-reminder" aria-controls="p-reminder" aria-selected="false" tabindex="-1">Payment reminder</button>
+        <button class="tab" role="tab" id="t-bengali" aria-controls="p-bengali" aria-selected="false" tabindex="-1">Bengali</button>
+      </div>
+
+      <div class="demo-panels">
+        <div class="demo-panel" role="tabpanel" id="p-rail" aria-labelledby="t-rail">
+          <div class="demo-art" aria-hidden="true"><img src="../../assets/brand/motifs/models/model-08.svg" alt=""></div>
+          <div class="demo-body">
+            <h3 class="demo-title">Rail helpline</h3>
+            <p class="body">An agent checks a waiting list, offers another train and books it. The “<span lang="hi">एक सेकंड</span>” pauses are where it waits on a tool call.</p>
+            <p class="label">Hindi · hi-IN · 24 kHz · Pace 1.0</p>
+            <ol class="transcript" role="list">
+              <li><span class="who">Agent</span><span lang="hi">नमस्ते! रेल सहायता में आपका स्वागत है। बताइए, मैं आपकी क्या मदद कर सकती हूँ?</span></li>
+              <li><span class="who">Customer</span><span lang="hi">हाँ जी, मेरा एक ticket waiting में है… बस उसका status जानना था।</span></li>
+              <li><span class="who">Agent</span><span lang="hi">ज़रूर। आप अपना PNR number बता दीजिए।</span></li>
+            </ol>
+          </div>
+        </div>
+        <div class="demo-panel" role="tabpanel" id="p-booking" aria-labelledby="t-booking" hidden>
+          <div class="demo-art" aria-hidden="true"><img src="../../assets/brand/motifs/models/model-11.svg" alt=""></div>
+          <div class="demo-body">
+            <h3 class="demo-title">Names and numbers, read in context</h3>
+            <p class="body">The PNR, train number, coach and seat, and PAN and Aadhaar, read the way people say them.</p>
+            <p class="label">Hindi · hi-IN</p>
+            <ol class="transcript" role="list">
+              <li><span class="who">Agent</span><span lang="hi">हाँ जी, umm… एक second, आपकी booking details check कर रही हूँ… हाँ, मिल गई।</span></li>
+            </ol>
+          </div>
+        </div>
+        <div class="demo-panel" role="tabpanel" id="p-reminder" aria-labelledby="t-reminder" hidden>
+          <div class="demo-art" aria-hidden="true"><img src="../../assets/brand/motifs/models/model-12.svg" alt=""></div>
+          <div class="demo-body">
+            <h3 class="demo-title">Amounts and dates in a payment reminder</h3>
+            <p class="body">The rupee amount, due date and cut-off time, in a firm but respectful call.</p>
+            <p class="label">Hindi · hi-IN</p>
+            <ol class="transcript" role="list">
+              <li><span class="who">Agent</span><span lang="hi">नमस्ते राहुल जी, मैं Vistaar Finance से बोल रही हूँ।</span></li>
+            </ol>
+          </div>
+        </div>
+        <div class="demo-panel" role="tabpanel" id="p-bengali" aria-labelledby="t-bengali" hidden>
+          <div class="demo-art" aria-hidden="true"><img src="../../assets/brand/motifs/models/model-09.svg" alt=""></div>
+          <div class="demo-body">
+            <h3 class="demo-title">Voices that sound native</h3>
+            <p class="body">The Bengali delivery of “<span lang="bn">ধুর বাবা</span>”, the hesitation in “umm”, and English words such as “Auto-<span lang="bn">ওয়ালা</span>” inside Bengali speech.</p>
+            <p class="label">Bengali</p>
+            <ol class="transcript" role="list">
+              <li><span class="who">Speaker</span><span lang="bn">ধুর বাবা, এই জ্যামে আর পারা যায় না!</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <p class="demo-listen"><a class="link-arrow" href="https://www.sarvam.ai/apis/text-to-speech">Listen to these samples on sarvam.ai</a></p>
+    </div>
+  </section>
+
+  <!-- 5. Capabilities -->
+  <section class="section" aria-labelledby="cap-title">
+    <div class="container">
+      <div class="section-head head-center">
+        <h2 class="h2" id="cap-title">Built for the depth of Indian&nbsp;speech</h2>
+        <p class="lead">Not just speaking India's languages, but speaking them the way India&nbsp;does.</p>
+      </div>
+      <div class="grid cap-grid" data-cols="1-2-2">
+        <article class="card-pastel" style="--wash:var(--gradient-green-light);--ink:var(--sr-green-800)">
+          <h3 class="card-title">Voices that sound native</h3>
+          <p class="body-sm">Regional delivery, natural hesitation, and the English words people actually mix into their own language.</p>
+          <img class="motif-corner" src="../../assets/brand/motifs/models/model-08.svg" alt="">
+        </article>
+        <article class="card-pastel" style="--wash:var(--gradient-blue-light);--ink:var(--sr-indigo-900)">
+          <h3 class="card-title">Indian English that sounds Indian</h3>
+          <p class="body-sm">“ra”, “machaa” and “da”, the pronunciation of Tamizhselvi, and the Bengaluru cadence of “faster only, no?”</p>
+          <img class="motif-corner" src="../../assets/brand/motifs/models/model-02.svg" alt="">
+        </article>
+        <article class="card-pastel" style="--wash:var(--gradient-pink-light);--ink:var(--sr-pink-800)">
+          <h3 class="card-title">Names and numbers, read in context</h3>
+          <p class="body-sm">PNRs, train numbers, coach and seat, PAN and Aadhaar, read the way people say them.</p>
+          <img class="motif-corner" src="../../assets/brand/motifs/models/model-11.svg" alt="">
+        </article>
+        <article class="card-pastel" style="--wash:var(--gradient-orange-light);--ink:var(--sr-orange-800)">
+          <h3 class="card-title">Amounts and dates, said properly</h3>
+          <p class="body-sm">Rupee amounts, due dates and cut-off times, in a tone that's firm but respectful.</p>
+          <img class="motif-corner" src="../../assets/brand/motifs/models/model-12.svg" alt="">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Developers -->
+  <section class="section dev" id="developers" aria-labelledby="dev-title">
+    <div class="container">
+      <div class="section-head head-center">
+        <p class="overline">For developers</p>
+        <h2 class="h2" id="dev-title">Add <span class="hl">Text to Speech</span> to your app in&nbsp;minutes</h2>
+        <p class="lead">One model string, one language code. The same API you already use for Bulbul&nbsp;V3.</p>
+        <ul class="chips" role="list" aria-label="Where you can use it">
+          <li class="chip">API</li><li class="chip">Playground</li><li class="chip">Content Studio</li><li class="chip">8 kHz to 48 kHz</li>
+        </ul>
+      </div>
+      <div class="dev-body">
+      <div class="code" aria-label="Python example">
+        <div class="code-head">
+          <span class="code-tab is-active">Python</span>
+          <span class="code-file">tts.py</span>
+        </div>
+        <!-- TODO: confirm SDK call names against the current Sarvam API docs -->
+        <pre><code><span class="k">from</span> sarvamai <span class="k">import</span> <span class="f">SarvamAI</span>
+
+client = <span class="f">SarvamAI</span>(api_subscription_key=<span class="s">"YOUR_API_KEY"</span>)
+
+audio = client.text_to_speech.<span class="f">convert</span>(
+    text=<span class="s">"नमस्ते, कैसे हैं आप?"</span>,
+    target_language_code=<span class="s">"hi-IN"</span>,
+    model=<span class="s">"bulbul:v4-flash"</span>,
+)</code></pre>
+      </div>
+      <p class="dev-link"><a class="link-arrow" href="#">Read the API docs</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Use cases (campaign register: deep grounds, motifs rising) -->
+  <section class="section uc" aria-labelledby="uc-title">
+    <div class="container section-head head-center">
+      <h2 class="h2" id="uc-title">One model. Many experiences.</h2>
+      <p class="lead">The same model becomes a voice agent, a teacher, a commentator and a narrator.</p>
+    </div>
+    <div class="rail" role="list">
+      <article class="card-dark" role="listitem" style="--ground:var(--ground-forest);--accent:var(--on-forest-accent)">
+        <h3 class="title">A voice agent</h3><p class="body-sm">Eleven turns. Both voices were generated from a written script.</p>
+        <img class="motif-rise" src="../../assets/brand/motifs/models/model-04.svg" alt="">
+      </article>
+      <article class="card-dark" role="listitem" style="--ground:var(--ground-indigo);--accent:var(--on-indigo-accent)">
+        <h3 class="title">A support agent</h3><p class="body-sm">Hesitation, clear next steps and calm delivery.</p>
+        <img class="motif-rise" src="../../assets/brand/motifs/models/model-10.svg" alt="">
+      </article>
+      <article class="card-dark" role="listitem" style="--ground:var(--ground-maroon);--accent:var(--on-maroon-accent)">
+        <h3 class="title">A teacher</h3><p class="body-sm">Bose–Einstein condensation, in Bengali and English.</p>
+        <img class="motif-rise" src="../../assets/brand/motifs/models/model-07.svg" alt="">
+      </article>
+      <article class="card-dark" role="listitem" style="--ground:var(--ground-amber);--accent:var(--on-amber-accent)">
+        <h3 class="title">Live sports</h3><p class="body-sm">Speed and energy, as the action unfolds.</p>
+        <img class="motif-rise" src="../../assets/brand/motifs/models/model-12.svg" alt="">
+      </article>
+    </div>
+  </section>
+
+  <!-- 8. Pricing + promo -->
+  <section class="section pricing" aria-labelledby="price-title">
+    <div class="container">
+      <div class="section-head head-center">
+        <h2 class="h2" id="price-title">Build with Bulbul V4&nbsp;Flash</h2>
+        <p class="lead">A third less than Bulbul V3, on the same API.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-copy">
+          <h3 class="card-title">Everything in the launch</h3>
+          <ul class="check-list" role="list">
+            <li>API, Playground and Content Studio</li>
+            <li>Output from 8 kHz to 48 kHz</li>
+            <li>Enterprise pricing available</li>
+          </ul>
+        </div>
+        <div class="card price-card">
+          <p class="meta">Limited time, 50% off until 12 Nov</p>
+          <p class="price"><s class="was" aria-label="was ₹20">₹20</s> <span class="metric">₹10</span></p>
+          <p class="unit">per 10,000 characters</p>
+          <div class="btn-pair">
+            <a class="btn btn-dark" href="#">View API pricing</a>
+            <a class="btn btn-light" href="#">Contact us</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="band band-promo" style="--accent:var(--on-maroon-accent)">
+        <div class="promo-copy">
+          <h2 class="display">50% off Bulbul V4 Flash until 12&nbsp;Nov</h2>
+          <p class="accent">Generate speech at the launch rate of ₹10 per 10,000 characters during the offer period.</p>
+          <div class="promo-cta"><a class="btn btn-white" href="#">Get API key</a><span class="meta accent">Limited time</span></div>
+        </div>
+        <img class="promo-motif" src="../../assets/brand/motifs/models/model-07.svg" alt="" aria-hidden="true">
+      </div>
+
+      <a class="strip" href="#">
+        <span><strong>Turn Bulbul into a voice agent that takes calls,</strong> as low as ₹3 a minute.</span>
+        <span class="link-arrow" aria-hidden="true">Explore Voice Agents</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 11. CTA band: one large model-02 scalloped disc holds the copy; two wide echoes step outward to fill the band (3 layers) -->
+  <section class="section cta" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="band band-cta" style="--band-bg:linear-gradient(180deg,var(--sr-indigo-200),var(--sr-indigo-400))">
+        <div class="motif-stack" aria-hidden="true">
+          <img class="layer" style="--n:2" src="../../assets/brand/motifs/models/model-02.svg" alt="">
+          <img class="layer" style="--n:1" src="../../assets/brand/motifs/models/model-02.svg" alt="">
+          <img class="layer" style="--n:0" src="../../assets/brand/motifs/models/model-02.svg" alt="">
+        </div>
+        <div class="cta-copy">
+          <h2 class="display" id="cta-title">Now write<br>your own.</h2>
+          <a class="btn btn-dark" href="#">Try the playground</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 12. Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="cols">
+      <div class="brand-block">
+        <img class="wordmark" src="../../assets/brand/logos/sarvam-wordmark-black.svg" alt="Sarvam" width="202" height="32">
+        <p class="meta">AI for all from India</p>
+      </div>
+      <nav aria-labelledby="fc1"><h2 id="fc1">Products</h2><ul><li><a href="#">Indus</a></li><li><a href="#">Samvaad</a></li><li><a href="#">Bulbul</a></li><li><a href="#">Saaras</a></li></ul></nav>
+      <nav aria-labelledby="fc2"><h2 id="fc2">APIs</h2><ul><li><a href="#">Text to Speech</a></li><li><a href="#">Speech to Text</a></li><li><a href="#">Translate</a></li><li><a href="#">Parse</a></li></ul></nav>
+      <nav aria-labelledby="fc3"><h2 id="fc3">Resources</h2><ul><li><a href="#">Docs</a></li><li><a href="#">Blog</a></li><li><a href="#">Pricing</a></li></ul></nav>
+      <nav aria-labelledby="fc4"><h2 id="fc4">Company</h2><ul><li><a href="#">About</a></li><li><a href="#">Careers</a></li><li><a href="#">Brand</a></li></ul></nav>
+      <nav aria-labelledby="fc5"><h2 id="fc5">Legal</h2><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li><li><a href="#">Security</a></li></ul></nav>
+    </div>
+    <div class="legal">
+      <p>© 2026 Axonwise Private Limited. All rights reserved.</p>
+      <p>732, Chinmaya Mission Hospital Road, Indiranagar Stage 1, Bengaluru, Karnataka 560038</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

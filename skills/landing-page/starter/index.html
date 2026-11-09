@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saaras V4 · Speech to Text · Sarvam</title>
+<meta name="description" content="Saaras V4: speech to text, perfected for India. 22 Indian languages with automatic detection, code-mixing, noisy and telephony audio.">
+<link rel="icon" href="../../assets/brand/logos/sarvam-logomark-black.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500&family=Noto+Sans+Bengali:wght@400;500&family=Noto+Sans+Tamil:wght@400;500&family=Noto+Sans+Telugu:wght@400;500&family=Noto+Sans+Gujarati:wght@400;500&family=Noto+Sans+Kannada:wght@400;500&family=Noto+Sans+Malayalam:wght@400;500&family=Noto+Sans+Gurmukhi:wght@400;500&family=Noto+Sans+Oriya:wght@400;500&family=Noto+Naskh+Arabic:wght@400;500&family=Noto+Sans+Ol+Chiki:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="../../skills/landing-page/page-base.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="https://www.sarvam.ai" aria-label="Sarvam home"><img src="../../assets/brand/logos/sarvam-wordmark-black.svg" alt="Sarvam" width="101" height="16"></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#" aria-current="page">Products</a><a href="#developers">Developers</a><a href="#">Resources</a><a href="#">Company</a>
+    </nav>
+    <div class="actions">
+      <a class="btn btn-dark" href="#">Log In</a>
+      <a class="btn btn-light" href="#">Contact Us</a>
+      <button class="menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+  <div class="menu-sheet" id="menu" hidden>
+    <div class="container">
+      <a class="row" href="#">Products</a><a class="row" href="#developers">Developers</a>
+      <a class="row" href="#">Resources</a><a class="row" href="#">Company</a>
+      <div class="sheet-actions"><a class="btn btn-dark" href="#">Log In</a><a class="btn btn-light" href="#">Contact Us</a></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero: centred copy, 2:1 layered art panel below (skill §5) -->
+  <section class="hero product-hero" aria-labelledby="hero-title">
+    <div class="hero-halo" aria-hidden="true"></div>
+    <div class="container hero-stack">
+      <div class="hero-copy">
+        <p class="overline">Speech to Text</p>
+        <h1 class="h1 product" id="hero-title">Saaras V4</h1>
+        <p class="subhead">Speech to text, perfected for India. Trust every transcript, even with background noise, multiple accents, or mid-sentence language&nbsp;switches.</p>
+        <div class="btn-pair stack">
+          <a class="btn btn-lg btn-primary" href="#">Get started for free</a>
+          <a class="btn btn-lg btn-secondary" href="#">Contact Us</a>
+        </div>
+        <p class="meta hero-note">Get 100 credits free</p>
+      </div>
+      <figure class="hero-art" aria-label="A code-mixed transcript from Saaras V4">
+        <div class="motif-stack" aria-hidden="true">
+          <img class="layer" style="--n:1" src="../../assets/brand/motifs/models/model-02.svg" alt="">
+          <img class="layer" style="--n:0" src="../../assets/brand/motifs/models/model-02.svg" alt="">
+        </div>
+        <figcaption class="hero-art-caption">
+          <span class="lang" lang="hi">मेरा phone number है 9840950950</span>
+          <span class="meta-light">Codemix · Hindi · hi-IN</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Proof strip -->
+  <section class="proof" aria-label="Saaras V4 at a glance">
+    <div class="container">
+      <dl class="proof-grid">
+        <div><dt>Median latency</dt><dd><span class="metric">&lt;250</span><span class="unit">ms</span></dd></div>
+        <div><dt>Transcribed</dt><dd><span class="metric">100M+</span><span class="unit">minutes</span></dd></div>
+        <div><dt>Uptime</dt><dd><span class="metric">&gt;99.5</span><span class="unit">%</span></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Output modes: one recording, five outputs -->
+  <section class="section modes" aria-labelledby="modes-title">
+    <div class="container">
+      <div class="section-head head-center">
+        <p class="overline">Flexible output</p>
+        <h2 class="h2" id="modes-title">Same audio, multiple&nbsp;formats</h2>
+        <p class="lead">One recording of “my phone number is 9840950950” in Hindi. Pick how you want it back.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Output modes">
+        <button class="tab" role="tab" id="t-transcribe" aria-controls="p-transcribe" aria-selected="true">Transcribe</button>
+        <button class="tab" role="tab" id="t-translate" aria-controls="p-translate" aria-selected="false" tabindex="-1">Translate</button>
+        <button class="tab" role="tab" id="t-translit" aria-controls="p-translit" aria-selected="false" tabindex="-1">Transliteration</button>
+        <button class="tab" role="tab" id="t-verbatim" aria-controls="p-verbatim" aria-selected="false" tabindex="-1">Verbatim</button>
+        <button class="tab" role="tab" id="t-codemix" aria-controls="p-codemix" aria-selected="false" tabindex="-1">Codemix</button>
+      </div>
+      <div class="mode-panels">
+        <div class="mode-panel" role="tabpanel" id="p-transcribe" aria-labelledby="t-transcribe">
+          <p class="label">Transcribe · with formatting and number normalisation</p>
+          <p class="mode-out" lang="hi">मेरा फोन नंबर है 9840950950</p>
+        </div>
+        <div class="mode-panel" role="tabpanel" id="p-translate" aria-labelledby="t-translate" hidden>
+          <p class="label">Translate · from Indic languages to English</p>
+          <p class="mode-out">My phone number is 9840950950</p>
+        </div>
+        <div class="mode-panel" role="tabpanel" id="p-translit" aria-labelledby="t-translit" hidden>
+          <p class="label">Transliteration · Indian languages written in English letters</p>
+          <p class="mode-out">mera phone number hai 9840950950</p>
+        </div>
+        <div class="mode-panel" role="tabpanel" id="p-verbatim" aria-labelledby="t-verbatim" hidden>
+          <p class="label">Verbatim · preserves fillers and spoken numbers</p>
+          <p class="mode-out" lang="hi">मेरा फोन नंबर है नौ आठ चार zero नौ पांच zero नौ पांच zero</p>
+        </div>
+        <div class="mode-panel" role="tabpanel" id="p-codemix" aria-labelledby="t-codemix" hidden>
+          <p class="label">Codemix · native script, keeps English words in English</p>
+          <p class="mode-out" lang="hi">मेरा phone number है 9840950950</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accuracy: a tagged transcript -->
+  <section class="section accuracy" aria-labelledby="acc-title">
+    <div class="container">
+      <div class="section-head head-center">
+        <h2 class="h2" id="acc-title">Every word, captured&nbsp;accurately</h2>
+        <p class="lead">Code-mixing. Numbers. Proper nouns. Abbreviations.</p>
+      </div>
+      <article class="card tagged" aria-label="A Hindi customer call, transcribed and tagged">
+        <p class="label tagged-meta">Hindi · hi-IN · a customer call</p>
+        <ol class="tagged-lines" role="list">
+          <li><span class="t">0:00</span><p lang="hi">हाँ मैंने <mark data-k="Proper noun">Flipkart</mark> से <mark data-k="Number">₹12,499</mark> का <mark data-k="Entity">Samsung Galaxy</mark> <mark data-k="Code switch">फ़ोन</mark> ऑर्डर किया था।</p></li>
+          <li><span class="t">0:06</span><p lang="hi">ऑर्डर ID है <mark data-k="Abbreviation">FLK-78234-XN</mark>।</p></li>
+          <li><span class="t">0:12</span><p lang="hi"><mark data-k="Code switch">डिलीवरी</mark> एड्रेस है 42, <mark data-k="Proper noun">Koramangala</mark> 5th Block, <mark data-k="Proper noun">Bangalore</mark>।</p></li>
+          <li><span class="t">0:17</span><p lang="hi">मेरा फ़ोन नंबर है <mark data-k="Phone number">9840950950</mark>।</p></li>
+        </ol>
+        <ul class="legend" role="list" aria-label="What the tags mean">
+          <li><span class="k k-pn"></span>Proper noun</li><li><span class="k k-num"></span>Number</li><li><span class="k k-ent"></span>Entity</li>
+          <li><span class="k k-cs"></span>Code switch</li><li><span class="k k-abbr"></span>Abbreviation</li><li><span class="k k-ph"></span>Phone number</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Capabilities: three columns (2 + 1 on tablet) -->
+  <section class="section" aria-labelledby="cap-title">
+    <div class="container">
+      <div class="section-head head-center">
+        <h2 class="h2" id="cap-title">Turn speech into text you can&nbsp;trust</h2>
+      </div>
+      <div class="grid cap-grid" data-tablet="2+1">
+        <article class="card-pastel" style="--wash:var(--gradient-blue-light);--ink:var(--sr-indigo-900)">
+          <h3 class="card-title">Seamless code-mixing</h3>
+          <p class="body-sm">Understands when speakers switch between Hindi, English and regional languages mid-sentence.</p>
+          <p class="sample" lang="ta">HCG MCC Hospital ஒரு ground breaking achievement பண்ணிட்டாங்க.</p>
+          <img class="motif-corner" src="../../assets/brand/motifs/models/model-15.svg" alt="">
+        </article>
+        <article class="card-pastel" style="--wash:var(--gradient-pink-light);--ink:var(--sr-pink-800)">
+          <h3 class="card-title">Telephony-optimised</h3>
+          <p class="body-sm">Handles real call-centre audio: 8 kHz, background noise, multiple speakers.</p>
+          <p class="sample" lang="hi">नमस्कार डब्ल्यू सी बैंक में संपर्क करने के लिए आपका धन्यवाद</p>
+          <img class="motif-corner" src="../../assets/brand/motifs/models/model-11.svg" alt="">
+        </article>
+        <article class="card-pastel" style="--wash:var(--gradient-green-light);--ink:var(--sr-green-800)">
+          <h3 class="card-title">Handles noisy audio</h3>
+          <p class="body-sm">Background noise, cross-talk, poor connections. Accuracy holds in challenging acoustic conditions.</p>
+          <p class="sample" lang="hi">अच्छा, मौजूदा सरकार का कामकाज आपको कैसा लगता है?</p>
+          <img class="motif-corner" src="../../assets/brand/motifs/models/model-13.svg" alt="">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use cases: dark cards, motifs rising -->
+  <section class="section uc" aria-labelledby="uc-title">
+    <div class="container section-head head-center">
+      <h2 class="h2" id="uc-title">Powering real-world voice&nbsp;solutions</h2>
+      <p class="lead">From call centres to accessibility tools. Real use cases, already in production.</p>
+    </div>
+    <div class="container">
+      <div class="grid uc-grid" data-tablet="2+1">
+        <article class="card-dark" style="--ground:var(--ground-indigo);--accent:var(--on-indigo-accent)">
+          <h3 class="title">Voice agents</h3>
+          <p class="body-sm">Real-time transcription for live voice agents and customer interactions.</p>
+          <ul class="uc-list" role="list"><li>Customer support</li><li>Sales and lead qualification</li><li>Edtech tutors</li><li>Social and companion bots</li></ul>
+          <img class="motif-rise" src="../../assets/brand/motifs/models/model-10.svg" alt="">
+        </article>
+        <article class="card-dark" style="--ground:var(--ground-slate);--accent:var(--on-indigo-accent)">
+          <h3 class="title">Post-call analytics</h3>
+          <p class="body-sm">Batch transcription with speaker diarisation and timestamps, so you know who said what.</p>
+          <img class="motif-rise" src="../../assets/brand/motifs/models/model-02.svg" alt="">
+        </article>
+        <article class="card-dark" style="--ground:var(--ground-night);--accent:var(--on-night-accent)">
+          <h3 class="title">Subtitling and captioning</h3>
+          <p class="body-sm">Captions in the speaker's own script, across 22 Indian languages.</p>
+          <img class="motif-rise" src="../../assets/brand/motifs/models/model-13.svg" alt="">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Developers: heading above, features + stats, code -->
+  <section class="section dev" id="developers" aria-labelledby="dev-title">
+    <div class="container">
+      <div class="section-head head-center">
+        <p class="overline">For developers</p>
+        <h2 class="h2" id="dev-title">Made for developers. Scales for&nbsp;enterprises.</h2>
+        <ul class="chips" role="list" aria-label="API types">
+          <li class="chip">REST</li><li class="chip">Streaming</li><li class="chip">Batch</li><li class="chip">10+ audio formats</li>
+        </ul>
+      </div>
+      <div class="dev-grid">
+        <ul class="feature-list" role="list">
+          <li><h3 class="value-title">22 Indian languages, auto-detected</h3><p class="body-sm">Comprehensive coverage with seamless code-mixing support.</p></li>
+          <li><h3 class="value-title">REST, streaming and batch APIs</h3><p class="body-sm">REST for quick calls, real-time streaming for voice agents, batch for analytics.</p></li>
+          <li><h3 class="value-title">Speaker diarisation</h3><p class="body-sm">Tells up to 20 speakers apart, with timestamps for each segment.</p></li>
+          <li><h3 class="value-title">Key term prompting</h3><p class="body-sm">Biases recognition toward names, brands and terms that are easy to miss.</p></li>
+          <li><h3 class="value-title">Plug-and-play integrations</h3><p class="body-sm">LiveKit and Pipecat: deploy a voice agent in under 10 minutes.</p></li>
+        </ul>
+        <div class="code" aria-label="Python example">
+          <div class="code-head"><span class="code-tab is-active">Python</span><span class="code-file">stt.py</span></div>
+          <!-- TODO: confirm SDK call names and the model string against the current Sarvam API docs -->
+          <pre><code><span class="k">from</span> sarvamai <span class="k">import</span> <span class="f">SarvamAI</span>
+
+client = <span class="f">SarvamAI</span>(api_subscription_key=<span class="s">"YOUR_API_KEY"</span>)
+
+result = client.speech_to_text.<span class="f">transcribe</span>(
+    file=<span class="f">open</span>(<span class="s">"call.wav"</span>, <span class="s">"rb"</span>),
+    model=<span class="s">"saaras:v4"</span>,
+    mode=<span class="s">"codemix"</span>,
+)</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Languages: every script, natively -->
+  <section class="section langs" aria-labelledby="lang-title">
+    <div class="container">
+      <div class="section-head head-center">
+        <h2 class="h2" id="lang-title">22 Indian languages, every script natively&nbsp;transcribed</h2>
+        <p class="lead">Accurate transcription across all scheduled languages, with code-mixing support.</p>
+      </div>
+      <ul class="lang-grid" role="list">
+        <li><span class="script" lang="hi">हिन्दी</span><span class="code-name">Hindi · hi-IN</span></li>
+        <li><span class="script" lang="bn">বাংলা</span><span class="code-name">Bengali · bn-IN</span></li>
+        <li><span class="script" lang="ta">தமிழ்</span><span class="code-name">Tamil · ta-IN</span></li>
+        <li><span class="script" lang="te">తెలుగు</span><span class="code-name">Telugu · te-IN</span></li>
+        <li><span class="script" lang="mr">मराठी</span><span class="code-name">Marathi · mr-IN</span></li>
+        <li><span class="script" lang="gu">ગુજરાતી</span><span class="code-name">Gujarati · gu-IN</span></li>
+        <li><span class="script" lang="kn">ಕನ್ನಡ</span><span class="code-name">Kannada · kn-IN</span></li>
+        <li><span class="script" lang="ml">മലയാളം</span><span class="code-name">Malayalam · ml-IN</span></li>
+        <li><span class="script" lang="as">অসমীয়া</span><span class="code-name">Assamese · as-IN</span></li>
+        <li><span class="script" lang="ur" dir="rtl">اردو</span><span class="code-name">Urdu · ur-IN</span></li>
+        <li><span class="script" lang="sa">संस्कृतम्</span><span class="code-name">Sanskrit · sa-IN</span></li>
+        <li><span class="script" lang="ne">नेपाली</span><span class="code-name">Nepali · ne-IN</span></li>
+        <li><span class="script" lang="doi">डोगरी</span><span class="code-name">Dogri · doi-IN</span></li>
+        <li><span class="script" lang="brx">बड़ो</span><span class="code-name">Bodo · brx-IN</span></li>
+        <li><span class="script" lang="pa">ਪੰਜਾਬੀ</span><span class="code-name">Punjabi · pa-IN</span></li>
+        <li><span class="script" lang="or">ଓଡ଼ିଆ</span><span class="code-name">Odia · or-IN</span></li>
+        <li><span class="script" lang="kok">कोंकणी</span><span class="code-name">Konkani · kok-IN</span></li>
+        <li><span class="script" lang="mai">मैथिली</span><span class="code-name">Maithili · mai-IN</span></li>
+        <li><span class="script" lang="sd" dir="rtl">سنڌي</span><span class="code-name">Sindhi · sd-IN</span></li>
+        <li><span class="script" lang="ks">कॉशुर</span><span class="code-name">Kashmiri · ks-IN</span></li>
+        <li><span class="script" lang="mni">মৈতৈলোন্</span><span class="code-name">Manipuri · mni-IN</span></li>
+        <li><span class="script" lang="sat">ᱥᱟᱱᱛᱟᱲᱤ</span><span class="code-name">Santali · sat-IN</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head head-center">
+        <h2 class="h2" id="faq-title">Your questions, answered</h2>
+      </div>
+      <div class="accordion faq-list">
+        <details open><summary>What is Saaras V4?</summary><div class="panel body">Saaras V4 is Sarvam's latest speech-to-text model. It auto-detects the spoken language and transcribes across all 22 supported Indian languages plus Indian English, with five output modes (transcribe, translate, verbatim, translit, codemix) and key term prompting for names, brands and domain-specific terms. It handles code-mixed audio and is optimised for both real-time and batch processing.</div></details>
+        <details><summary>What API types are available?</summary><div class="panel body">Three variants: a REST API for files under 30 seconds with synchronous processing, a Batch API for files up to 2 hours with speaker diarisation and timestamps, and a Streaming API for real-time transcription over WebSocket. The Realtime Streaming API (beta) also returns interim transcripts while the user is still speaking.</div></details>
+        <details><summary>What audio formats are supported?</summary><div class="panel body">10+ formats, including MP3, WAV, AAC, OGG, Opus, FLAC, M4A, AMR, WMA and WebM. The Streaming API supports WAV and raw PCM at a 16 kHz sample rate.</div></details>
+        <details><summary>Does it support speaker diarisation?</summary><div class="panel body">Yes. The Batch API identifies up to 20 speakers per audio file and labels each segment with timestamps. It's ideal for meetings, interviews and call-centre analytics.</div></details>
+      </div>
+      <a class="strip" href="#">
+        <span><strong>Turn Saaras into a voice agent that takes calls,</strong> as low as ₹3 a minute.</span>
+        <span class="link-arrow" aria-hidden="true">Explore Voice Agents</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Closing band: wide layered motif (skill §5) -->
+  <section class="section cta" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="band band-cta" style="--band-bg:var(--sr-indigo-700)">
+        <div class="motif-stack" aria-hidden="true">
+          <img class="layer" style="--n:2" src="../../assets/brand/motifs/models/model-10.svg" alt="">
+          <img class="layer" style="--n:1" src="../../assets/brand/motifs/models/model-10.svg" alt="">
+          <img class="layer" style="--n:0" src="../../assets/brand/motifs/models/model-10.svg" alt="">
+        </div>
+        <div class="cta-copy">
+          <h2 class="display" id="cta-title">Start transcribing<br>in minutes</h2>
+          <a class="btn btn-white" href="#">Get started for free</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="cols">
+      <div class="brand-block">
+        <img class="wordmark" src="../../assets/brand/logos/sarvam-wordmark-black.svg" alt="Sarvam" width="202" height="32">
+        <p class="meta">AI for all from India</p>
+      </div>
+      <nav aria-labelledby="fc1"><h2 id="fc1">Products</h2><ul><li><a href="#">Indus</a></li><li><a href="#">Samvaad</a></li><li><a href="#">Bulbul</a></li><li><a href="#">Saaras</a></li></ul></nav>
+      <nav aria-labelledby="fc2"><h2 id="fc2">APIs</h2><ul><li><a href="#">Text to Speech</a></li><li><a href="#">Speech to Text</a></li><li><a href="#">Translate</a></li><li><a href="#">Parse</a></li></ul></nav>
+      <nav aria-labelledby="fc3"><h2 id="fc3">Resources</h2><ul><li><a href="#">Docs</a></li><li><a href="#">Blog</a></li><li><a href="#">Pricing</a></li></ul></nav>
+      <nav aria-labelledby="fc4"><h2 id="fc4">Company</h2><ul><li><a href="#">About</a></li><li><a href="#">Careers</a></li><li><a href="#">Brand</a></li></ul></nav>
+      <nav aria-labelledby="fc5"><h2 id="fc5">Legal</h2><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li><li><a href="#">Security</a></li></ul></nav>
+    </div>
+    <div class="legal">
+      <p>© 2026 Axonwise Private Limited. All rights reserved.</p>
+      <p>732, Chinmaya Mission Hospital Road, Indiranagar Stage 1, Bengaluru, Karnataka 560038</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

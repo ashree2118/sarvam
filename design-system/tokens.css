@@ -1,0 +1,348 @@
+/* ==========================================================================
+   Sarvam design tokens
+   Single source of truth for every banner and web page in this repo.
+   Values are taken from sarvam.ai's production CSS (Nov 2026) unless marked
+   "system", meaning they were defined here to cover campaign work.
+   Import with: <link rel="stylesheet" href="../../design-system/tokens.css">
+   ========================================================================== */
+
+/* ---------- Fonts ----------
+   Season Mix and Matter are licensed faces (see assets/fonts/README.md).
+   Each @font-face tries Sarvam's licensed file first, then the trial
+   variable font. Both are variable, so the +25 weights (425, 525) render
+   exactly. The trial "Season" file holds Sans, Mix and Serif on one SERF axis:
+   Mix is SERF 50, set on html below (fonts without that axis ignore it).
+   Indic scripts fall through to Noto Sans, loaded per page from Google Fonts. */
+@font-face {
+  font-family: "Season Mix";
+  src: url("../assets/fonts/SeasonMixVFUprights.woff2") format("woff2"),
+       url("../assets/fonts/SeasonCollectionVF-TRIAL.ttf") format("truetype");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Matter";
+  src: url("../assets/fonts/MatterUprights-VF.woff2") format("woff2"),
+       url("../assets/fonts/MatterCollectionVF-TRIAL.ttf") format("truetype");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Matter Mono";
+  src: url("../assets/fonts/MatterMono-Regular.woff2") format("woff2"),
+       url("../assets/fonts/MatterMono-TRIAL-Regular.otf") format("opentype");
+  font-weight: 300 474; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Matter Mono";
+  src: url("../assets/fonts/MatterMono-Medium.woff2") format("woff2"),
+       url("../assets/fonts/MatterMono-TRIAL-Medium.otf") format("opentype");
+  font-weight: 475 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Matter Semi Mono";
+  src: url("../assets/fonts/MatterSemiMono-Regular.woff2") format("woff2"),
+       url("../assets/fonts/MatterSemiMono-TRIAL-Regular.otf") format("opentype");
+  font-weight: 300 474; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Matter Semi Mono";
+  src: url("../assets/fonts/MatterSemiMono-Medium.woff2") format("woff2"),
+       url("../assets/fonts/MatterSemiMono-TRIAL-Medium.otf") format("opentype");
+  font-weight: 475 700; font-style: normal; font-display: swap;
+}
+/* Season Mix = SERF 50 in the trial collection font. Inherited everywhere;
+   ignored by any font without a SERF axis (Matter, Noto, the licensed file). */
+html { font-variation-settings: "SERF" 50; }
+
+:root {
+  /* ---------- Font families ---------- */
+  --font-indic: "Noto Sans Devanagari", "Noto Sans Bengali", "Noto Sans Tamil",
+                "Noto Sans Telugu", "Noto Sans Kannada", "Noto Sans Malayalam",
+                "Noto Sans Gurmukhi", "Noto Sans Oriya", "Noto Sans Gujarati",
+                "Noto Naskh Arabic", "Noto Sans Ol Chiki";
+  --font-season-mix: "Season Mix", "Matter", var(--font-indic), Georgia, serif;
+  --font-matter: "Matter", var(--font-indic), ui-sans-serif, system-ui, sans-serif;
+  --font-matter-mono: "Matter Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-matter-semi-mono: "Matter Semi Mono", var(--font-matter-mono);
+
+  /* ---------- Font weights (variable axes; the site uses the +25 values) ---------- */
+  --fw-light: 325;
+  --fw-regular: 425;    /* banner headlines, body, metrics */
+  /* Matter running text. The trial Matter file renders ~2% heavier than Sarvam's licensed
+     file at the same value (measured by ink coverage, Nov 2026): 415 on the trial file matches
+     425 on the licensed one. Set this back to 425 when the licensed files are installed. */
+  --fw-text: 415;
+  --fw-medium: 525;     /* all page headings, labels, buttons */
+  --fw-semibold: 625;   /* tags, blog-cover titles */
+
+  /* ---------- Surfaces ---------- */
+  --color-white: #FFFFFF;
+  --color-sf: #FCFCFC;
+  --color-sf-secondary: #F5F5F5;
+  --color-sf-tertiary: #F0F0F0;
+  --color-sf-quaternary: #E6E6E6;
+  /* ---------- Strokes ---------- */
+  --color-st: #E6E6E6;
+  --color-st-secondary: #F0F0F0;
+  --color-st-panel: #D5D5D5;
+  /* ---------- Text ---------- */
+  --color-tx: #1F1F1F;
+  --color-tx-secondary: #3D3D3D;
+  --color-tx-tertiary: #666666;
+  --color-tx-inverse: #FAF8F5;
+  /* ---------- Dark surface ---------- */
+  --color-sr-slate: #2A2C33;
+  /* ---------- Brand anchors ---------- */
+  --color-br-blue: #393CC1;
+  --color-br-orange: #D5650F;
+
+  /* ---------- Brand scales ---------- */
+  --sr-indigo-50: #FAFCFF;  --sr-indigo-100: #E8EFFC; --sr-indigo-200: #D2DFF9;
+  --sr-indigo-300: #A7C0F1; --sr-indigo-400: #81A0E9; --sr-indigo-500: #6A88E2;
+  --sr-indigo-600: #556ADC; --sr-indigo-700: #4250D5; --sr-indigo-800: #3333CC;
+  --sr-indigo-900: #212191; --sr-indigo-950: #11115B;
+
+  --sr-orange-50: #FFFBFA;  --sr-orange-100: #FEEDE6; --sr-orange-200: #FDDCCE;
+  --sr-orange-300: #F9BB9E; --sr-orange-400: #F59970; --sr-orange-500: #F38858;
+  --sr-orange-600: #EE7944; --sr-orange-700: #E96C2F; --sr-orange-800: #E6651B;
+  --sr-orange-900: #A5460F; --sr-orange-950: #682906;
+
+  --sr-pink-50: #FCEAF0;  --sr-pink-100: #F9D5E1; --sr-pink-200: #EFABC5;
+  --sr-pink-300: #E380A8; --sr-pink-400: #D4508E; --sr-pink-500: #B12060;
+  --sr-pink-600: #9D2055; --sr-pink-700: #871F4B; --sr-pink-800: #731E3F;
+  --sr-pink-900: #611C35; --sr-pink-950: #4D192C;
+
+  --sr-yellow-50: #FFF8E6;  --sr-yellow-100: #FFF0CF; --sr-yellow-200: #FFE8B7;
+  --sr-yellow-300: #FFCB79; --sr-yellow-400: #FFB94A; --sr-yellow-500: #FEB12B;
+  --sr-yellow-600: #DF9C2A; --sr-yellow-700: #C08827; --sr-yellow-800: #A27224;
+  --sr-yellow-900: #6B4C1C; --sr-yellow-950: #362813;
+
+  --sr-green-50: #F2F8EB;  --sr-green-100: #E3F1D8; --sr-green-200: #C8E4B0;
+  --sr-green-300: #ACD587; --sr-green-400: #90C85B; --sr-green-500: #83C040;
+  --sr-green-600: #6EA335; --sr-green-700: #496D21; --sr-green-800: #385418;
+  --sr-green-900: #263D0E; --sr-green-1000: #152605;
+
+  --sr-red-50: #FDE7E2;  --sr-red-100: #F8D1C6; --sr-red-200: #EBA18F;
+  --sr-red-300: #DB715C; --sr-red-400: #C43D2B; --sr-red-500: #B81514;
+  --sr-red-600: #A21913; --sr-red-700: #781A11; --sr-red-800: #781A11;
+  --sr-red-900: #52170E; --sr-red-1000: #3E140B;
+
+  --sr-grey-50: #F9F9F9;  --sr-grey-100: #F5F5F5; --sr-grey-200: #F0F0F0;
+  --sr-grey-300: #E6E6E6; --sr-grey-400: #CCCCCC; --sr-grey-500: #B3B3B3;
+  --sr-grey-600: #999999; --sr-grey-700: #666666; --sr-grey-800: #525252;
+  --sr-grey-900: #3D3D3D; --sr-grey-950: #292929;
+
+  /* ---------- Cultural palette (from the brand identity, sampled from Indian
+     textiles and architecture). Campaign accents and deep grounds. ---------- */
+  --cult-door-green: #293A18;   /* painted temple door */
+  --cult-bandhani:   #B1205F;   /* bandhani tie-dye */
+  --cult-marigold:   #FEBF2B;   /* marigold garland */
+  --cult-brocade:    #C11317;   /* Banarasi brocade */
+  --cult-sandstone:  #9E5F0A;   /* sandstone jharokha */
+
+  /* ---------- Deep grounds (campaign + dark product cards) — system ---------- */
+  --ground-night:   #141414;  /* charcoal, posters "A gateway between people…" */
+  --ground-slate:   #2A2C33;
+  --ground-indigo:  #12127A;  /* use-case cards, between indigo-900 and -950 */
+  --ground-maroon:  #4D192C;  /* = pink-950; Bulbul promo band */
+  --ground-oxblood: #54180E;  /* "Who gets to be understood?" poster */
+  --ground-forest:  #1D3A0E;  /* TTS use-case band */
+  --ground-amber:   #5A3A0A;  /* live-sports card */
+
+  /* Text that sits on each deep ground: warm white for headlines,
+     a tint of the ground's own hue for supporting copy. */
+  --on-night-accent:   #F9BB9E;  /* orange-300 */
+  --on-indigo-accent:  #D2DFF9;  /* indigo-200 */
+  --on-maroon-accent:  #F9BB9E;  /* orange-300 (observed peach) */
+  --on-oxblood-accent: #FDDCCE;  /* orange-200 */
+  --on-forest-accent:  #C8E4B0;  /* green-200 */
+  --on-amber-accent:   #FFE8B7;  /* yellow-200 */
+
+  /* ---------- Gradients (all 180°, light → deep) ---------- */
+  --gradient-blue:          linear-gradient(180deg, #BED2FF 0%, #393CC1 100%);
+  --gradient-blue-medium:   linear-gradient(180deg, #DDE7FF 0%, #A6A7E3 100%);
+  --gradient-blue-light:    linear-gradient(180deg, #F4F7FF 0%, #BED2FF 100%);
+  --gradient-orange:        linear-gradient(180deg, #D5650F 0%, #EAAF1C 100%);
+  --gradient-orange-medium: linear-gradient(180deg, #E29357 0%, #F0C760 100%);
+  --gradient-orange-light:  linear-gradient(180deg, #F2D1B7 0%, #F9E7BB 100%);
+  --gradient-pink:          linear-gradient(180deg, #F581A6 0%, #76123D 100%);
+  --gradient-pink-medium:   linear-gradient(180deg, #F8A7C1 0%, #B47D94 100%);
+  --gradient-pink-light:    linear-gradient(180deg, #FCD9E4 0%, #DDC4CF 100%);
+  --gradient-green:         linear-gradient(180deg, #89B95B 0%, #293A18 100%);
+  --gradient-green-medium:  linear-gradient(180deg, #ACCE8C 0%, #899380 100%);
+  --gradient-green-light:   linear-gradient(180deg, #DCEACE 0%, #CACEC5 100%);
+
+  /* Signature spectrum (campaign). Stops sampled from Sarvam brand images:
+     dawn = brand-01 (night → periwinkle → peach → saffron), dusk = brand-10
+     (deep saffron → orange → peach → mist), gateway = brand-06 (indigo → lilac → peach). */
+  --spectrum-dawn:    linear-gradient(180deg, #17181A 0%, #1C253E 20%, #2C4376 35%, #5F78B0 50%, #A7B6DF 65%, #D7BBB3 80%, #F49943 100%);
+  --spectrum-dusk:    linear-gradient(180deg, #A9490D 0%, #BB510D 20%, #E96D0D 35%, #FD9131 50%, #F4B470 65%, #CECDDC 80%, #F1F3FF 100%);
+  --spectrum-gateway: linear-gradient(180deg, #3635CE 0%, #4E4BCF 30%, #7E71D1 50%, #AA97CF 65%, #DBC0CE 80%, #FBC3AA 100%);
+
+  /* Utility gradients */
+  --gradient-surface-wash: linear-gradient(180deg, #E8EFFC, #FCFCFC);
+  --gradient-footer: linear-gradient(to bottom, #FFFFFF, #F5F5F5);
+  --gradient-halo-indigo: radial-gradient(circle, #E8EFFC 0%, #FAFCFF 55%, transparent 72%);
+  --gradient-hero-halo: radial-gradient(ellipse, #A5BBFC 0%, #D5E2FF 40%, transparent 70%);
+  --gradient-hairline: radial-gradient(circle, #6A88E2 0%, transparent 100%);
+  --gradient-cta-band: linear-gradient(180deg, #1C1D2E 0%, #3D4270 45%, #8C9BE0 100%);
+  --gradient-btn-primary: linear-gradient(to bottom, #3A3F5C, #1E2033);
+  --gradient-btn-secondary: linear-gradient(to bottom, #FFFFFF, #F0F1F5);
+
+  /* ---------- Radius ---------- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+  --radius-full: 9999px;
+
+  /* ---------- Spacing ---------- */
+  --spacing-width-mx: 1400px;
+
+  /* ---------- Elevation ---------- */
+  --shadow-card: 0 0 40px 0 #0000000F;
+  --shadow-card-hover: 0 8px 40px -4px #0000001F;
+  --shadow-elevation-sm: 0 1px 3px #00000014;
+  --shadow-elevation-md: 0 4px 24px #0000001F;
+  --shadow-elevation-lg: 0 12px 40px -8px #0000001F;
+  --shadow-focus-indigo: 0 0 0 3px #A5BBFC26;
+  --shadow-inset-glow-indigo: inset 0 0 10px #C7D2FECC;
+  --shadow-button-dark: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -2px 0 rgba(0,0,0,.2);
+  --shadow-button-light: inset 0 2px 0 rgba(200,200,200,.1), inset 0 -1px 0 rgba(0,0,0,.05);
+
+  /* ---------- Motion ---------- */
+  --ease-brand: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: .15s;
+  --duration-normal: .2s;
+  --duration-moderate: .3s;
+  --duration-button: .35s;
+  --duration-slow: .5s;
+  --duration-panel: .65s;
+  --duration-entrance: .7s;
+
+  /* ---------- Code ---------- */
+  --code-bg: #FAFAFA;
+  --code-header-bg: #F0F0F0;
+  --code-fg: #1F1F1F;
+  --code-keyword: #3333CC;
+  --code-function: #212191;
+  --code-string: #496D21;
+  --code-constant: #A5460F;
+  --code-comment: #666666;
+}
+
+/* ==========================================================================
+   Responsive tokens (system; layout.md §2, typography.md §3). Mobile first,
+   switching at 640, 768 and 1024. Display type is fluid from 375 to 1280px.
+   ========================================================================== */
+:root {
+  /* Layout */
+  --page-width: 88%;                 /* 4-column phone layout */
+  --page-max: var(--spacing-width-mx);
+  --grid-gap: 16px;
+  --section-gap: 96px;               /* between sections */
+  --section-head-gap: 40px;          /* section header → content */
+  --hero-pad-top: 128px;             /* below the fixed header */
+  --header-h: 64px;
+  --card-pad: 20px;
+  --card-radius: var(--radius-2xl);
+  --band-pad: 40px 24px;
+  --band-radius: var(--radius-2xl);
+  --touch-min: 44px;
+
+  /* Type (typography.md §3), measured on sarvam.ai at 375 and 1440px. Laptop scale approved in review. */
+  --text-h1: clamp(44px, 2.21vw + 35.7px, 64px);
+  --lh-h1: 1.05;  --ls-h1: -0.025em;
+  --text-h1-product: clamp(52px, 1.33vw + 47px, 64px);   /* approved on the Bulbul page: 52 → 64, 76 at lg */
+  --text-h2: clamp(34px, 1.33vw + 29px, 46px);      /* section headings: 34 → 46, 52 at lg (approved) */
+  --lh-h2: 1.15;  --ls-h2: -0.02em;
+  --text-h3: 28px;                                   /* in-section titles, dark-card titles: 28, 32 at lg */
+  --text-band: clamp(36px, 1.33vw + 31px, 48px);
+  --text-metric: clamp(56px, 1.77vw + 49.4px, 72px);
+  --text-subhead: 18px;  --lh-subhead: 1.6;
+  --text-lead: 17px;     --lh-lead: 1.6;
+  --text-body: 16px;     --lh-body: 1.6;
+  --text-body-sm: 15px;  --lh-body-sm: 1.55;
+  --text-ui: 16px;                                   /* tabs, chips, list rows, footer links, text links */
+  --text-eyebrow: 14px;
+  --text-card-title: 22px; --lh-card-title: 1.3; --ls-card-title: -0.015em;
+  --text-value: 20px;
+  --text-quote: 20px;
+  --text-overline: 12px; --ls-overline: 0.1em;
+  --text-meta: 14px;
+  --text-label: 13px;
+}
+@media (min-width: 640px) {
+  :root { --text-lead: 18px; }
+}
+@media (min-width: 768px) {
+  :root {
+    --page-width: 83.333%;           /* 10 of 12 columns */
+    --grid-gap: 20px;
+    --section-gap: 144px;
+    --section-head-gap: 48px;
+    --hero-pad-top: 160px;
+    --header-h: 68px;
+    --card-pad: 28px;
+    --band-pad: 56px 48px;
+    --band-radius: var(--radius-3xl);
+    --text-subhead: 20px;
+    --text-lead: 18px;
+    --text-body: 17px;
+    --text-body-sm: 16px;
+    --text-eyebrow: 16px;
+    --text-card-title: 22px;
+    --text-value: 21px;
+    --text-quote: 22px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --grid-gap: 24px;
+    --section-gap: 176px;
+    --section-head-gap: 56px;
+    --card-pad: 32px;
+    --band-pad: 64px;
+    /* Laptop and up (approved Nov 2026): headings larger, all other text +2px over the
+       sarvam.ai-measured sizes. */
+    --text-h1: calc(clamp(44px, 2.21vw + 35.7px, 64px) + 2px);
+    --text-h1-product: clamp(68px, 1.17vw + 57px, 76px);
+    --text-h2: clamp(46px, .94vw + 38.5px, 52px);
+    --text-h3: 32px;
+    --text-band: clamp(48px, .94vw + 40.5px, 54px);
+    --text-metric: calc(clamp(56px, 1.77vw + 49.4px, 72px) + 2px);
+    --text-card-title: 28px;
+    --text-value: 24px;
+    --text-subhead: 22px;
+    --text-lead: 20px;
+    --text-body: 20px;
+    --text-body-sm: 18px;
+    --text-ui: 18px;
+    --text-eyebrow: 18px;
+    --text-quote: 26px;
+    --text-overline: 14px;
+    --text-meta: 16px;
+    --text-label: 15px;
+  }
+}
+
+/* Film grain for campaign gradients. Apply as an extra background layer:
+   background: var(--grain), var(--spectrum-gateway); background-blend-mode: soft-light, normal; */
+:root {
+  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0s; --duration-normal: 0s;
+    --duration-moderate: 0s; --duration-button: 0s; --duration-slow: 0s;
+    --duration-panel: 0s; --duration-entrance: 0s;
+  }
+}
