@@ -15,7 +15,7 @@ A full page, header to footer, that would sit naturally on sarvam.ai: neutral ca
 5. `design-system/campaign.md` §5 for layered hero art and bands
 6. `design-system/brand-voice.md`
 
-Calibrate against `assets/reference/web-*.png` and the built page `website/bulbul-v4/`.
+Calibrate against `assets/reference/web-*.png` and the built Bulbul page (`index.html` at the repo root).
 
 ## 2. Brief
 Product or feature (required) · audience (default: developers and enterprise buyers) · primary action ("Get API key" / "Sign up") · secondary action ("Try the playground" / "Contact Us") · colour world (`colors.md` §5) · proof: real numbers only, else `TODO: confirm`.

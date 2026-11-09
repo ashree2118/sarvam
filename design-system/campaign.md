@@ -86,7 +86,7 @@ Used for wide banners, CTA and promo bands, and page hero art. **All sizes are a
 - **Check:** the edges step out at equal intervals (~10–13% of the width per side) and each echo shows its full edge inside the container. A sliver in a corner means the motif is too big for that shape.
 - Choose a motif that steps evenly (`imagery.md` §4). Never 07.
 - On phones keep the container landscape (16:10 bands, 2:1 hero art); never switch to a tall card.
-- Reference: the "Now write your own." band and the hero art in `website/bulbul-v4/`.
+- Reference: the "Now write your own." band and the hero art in the Bulbul page at the repo root (`index.html`).
 
 ## 6. Lockups
 - **Partner:** wordmark · small diamond · partner logo on one line, with the wordmark's clear space (`web/guide-partnership-lockup`). Event banners may use a thin vertical rule instead (`banner.jpg`).

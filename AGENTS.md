@@ -9,7 +9,7 @@ The Sarvam AI brand system: Sarvam's design language written down so AI tools pr
 | `skills/social-banner/` | `SKILL.md`, `banner-base.css`, `template.html`, `export.js` |
 | `skills/landing-page/` | `SKILL.md`, `page-base.css`, `page-base.js`, `screenshot.js`, `starter/` (a complete page to copy) |
 | `assets/brand/` | Official logos, ornament, bowl glow and the 16 model motifs: the only shapes allowed |
-| `assets/fonts/` | Licensed fonts if present, else trial files (personal use only). Git-ignored; see its README |
+| `assets/fonts/` | Licensed fonts if present, else trial files (personal use only). Committed; see its README |
 | `assets/reference/` | Captures of Sarvam's identity (`brand-*`), website (`web-*`) and public covers (`web/`) for calibration |
 | `banners/<meta\|linkedin>/<yyyy-mm-dd>-<slug>/` | Banner output: `index.html` + PNGs while working; delivered folders keep the exact-size PNG only |
 | `website/<slug>/` | Page output: `index.html`, `styles.css`, `screenshots/` |

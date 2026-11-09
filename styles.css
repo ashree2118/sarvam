@@ -1,5 +1,5 @@
-@import url("../../design-system/tokens.css");
-@import url("../../skills/landing-page/page-base.css");
+@import url("design-system/tokens.css");
+@import url("skills/landing-page/page-base.css");
 
 /* ==========================================================================
    Bulbul V4 Flash landing page. Composition only: every block, type size and

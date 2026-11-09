@@ -10,5 +10,5 @@
 | Matter Semi Mono 400 / 500 | `MatterSemiMono-Regular.woff2`, `-Medium.woff2` | `MatterSemiMono-TRIAL-Regular.otf`, `-Medium.otf` |
 
 - Trial files (Befonts) are **personal use only** (`TRIAL-LICENSE.txt`): real letterforms, fine for design and review. Anything published for Sarvam must be re-exported with the licensed files. With licensed Matter, set `--fw-text` back to 425.
-- The banner exporter warns when it renders with trial files. Font files are git-ignored.
+- The banner exporter warns when it renders with trial files. The trial files are committed so the deployed page renders correctly; replace them with licensed files before any commercial use.
 - Indic scripts use Noto Sans from Google Fonts (SIL OFL); nothing goes here for those.
