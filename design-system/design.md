@@ -57,7 +57,7 @@ A landing page uses both: product register for the body, campaign register for t
 1. Imports `tokens.css`; no invented values.
 2. **Product register:** canvas `#FCFCFC`/white, headings `#1F1F1F`, paragraphs `#3D3D3D` (#666 only for card text and meta), saturated colour ≤ ~10%.
 3. **Campaign register:** one continuous ground (never a single flat colour, except a photo window or a night poster), one official motif as-is, grain on gradients. Checks in `campaign.md` §2.
-4. Headlines are Season Mix with negative tracking; everything else Matter. Pages: headings medium (525).
+4. Headlines are Season Mix with negative tracking; everything else Matter. Pages: headings regular (425), as on sarvam.ai.
 5. Pills for buttons, 16–32px card radii, barely visible shadows.
 6. Whitespace dominates; one message per banner or section.
 7. Wordmark official, black or white, with clear space, never beside the monogram.

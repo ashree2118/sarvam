@@ -180,17 +180,13 @@
 @media (min-width: 1024px) { .cta .motif-stack { --stack-w: 86%; --stack-step: 28%; } }   /* band ~1.8:1 */
 @media (min-width: 1280px) { .cta .motif-stack { --stack-w: 76%; --stack-step: 26%; } }   /* band 2.2:1 and wider */
 .cta-copy { position: relative; z-index: 1; display: grid; justify-items: center; gap: 28px; }
-/* Season Mix, large (by request). Dark text: model-02 is a light motif (white to periwinkle) */
-.cta-copy .display { color: var(--color-tx); font-family: var(--font-season-mix); font-weight: var(--fw-semibold); font-size: clamp(42px, 2vw + 34.5px, 58px); line-height: 1.08; letter-spacing: -0.025em; }
+/* Season Mix. Dark text: model-02 is a light motif (white to periwinkle) */
+.cta-copy .display { color: var(--color-tx); font-family: var(--font-season-mix); font-weight: var(--fw-regular); font-size: clamp(36px, 2vw + 28.5px, 54px); line-height: 1.08; letter-spacing: -0.025em; }
 @media (min-width: 1024px) { .cta .band-cta { min-height: 480px; } }
 
 /* Laptop and up: page-specific sizes (the system tokens carry the approved type scale) */
 @media (min-width: 1024px) {
   /* hard-coded sizes on this page */
-  .transcript li { font-size: 22px; }
-  .code pre { font-size: 17px; }
-  .price .was { font-size: 34px; }                    /* number: +2 */
-  .cta-copy .display { font-size: clamp(56px, 1.25vw + 46px, 64px); }
   /* give the larger text room */
   .hero-copy .subhead { max-width: 46ch; }
   .cap-grid .card-pastel > :not(img) { max-width: 28ch; }
@@ -211,8 +207,8 @@
   .hero-art-caption { left: 50%; right: auto; translate: -50% 0; width: min(560px, calc(100% - 32px)); text-align: center; }
 }
 
-/* Page-specific headings use the system heading weight (medium) */
-.demo-title, .cta-copy .display { font-weight: var(--fw-medium); }
+/* Page-specific headings use the system heading weight (regular) */
+.demo-title, .cta-copy .display { font-weight: var(--fw-regular); }
 
 /* Closing band on phones: keep the desktop's wide layered composition, scaled down
    (reference: sarvam.ai brand page on mobile). Landscape 16:10, width-based layering. */

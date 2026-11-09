@@ -7,16 +7,16 @@ Always pills (`--radius-full`). Labels are short verbs in sentence case: *Sign u
 
 | Variant | Spec | Use |
 |---|---|---|
-| Primary, large | Season Mix 525 16px · 56px tall · padding 16px 32px · `--gradient-btn-primary` · white | Hero and section CTAs |
+| Primary, large | Season Mix 525 16px · 52px tall · padding 14px 24px · `--gradient-btn-primary` · white | Hero and section CTAs |
 | Secondary, large | Same size · `--gradient-btn-secondary` · text `#1E2033` · inset 1px ring at 14% | Hero pair |
-| Primary, content | Matter 525 16px · 48px · padding 12px 26px · `--color-sr-slate` · white · `--shadow-button-dark` | Inline CTAs, "Get API key" |
+| Primary, content | Matter 525 16px · 44px · padding 10px 20px · `--color-sr-slate` · white · `--shadow-button-dark` | Inline CTAs, "Get API key" |
 | Secondary, content | Same size · `--color-sf-secondary` · `--color-tx` · `--shadow-button-light` | "View All Updates" |
-| Header | 44px, 15px, padding 10px 22px | *Log In* (dark), *Contact Us* (light) |
+| Header | 40px, 15px, padding 8px 20px | *Log In* (dark), *Contact Us* (light) |
 | On dark ground | Secondary, white background | Promo and CTA bands |
 | Text link | Matter 425, `--sr-indigo-800`, "→" | "Explore Voice Agents →" |
 | Play | 56–92px white circle, slate triangle, `--shadow-elevation-md` | On orbs and video |
 
-Padding is enlarged from sarvam.ai (system). States: hover a white 8% overlay over 200ms; press `scale(.97)`; focus 2px `--sr-indigo-600` outline, offset 2px; disabled opacity .4. Below 1024px, card button pairs stack full width.
+Sizes measured on sarvam.ai. States: hover a white 8% overlay over 200ms; press `scale(.97)`; focus 2px `--sr-indigo-600` outline, offset 2px; disabled opacity .4. Below 1024px, card button pairs stack full width.
 
 ## 2. Header
 Fixed, white, 1px `--color-st-secondary` hairline, ≈68px tall, container 10/12 (88% mobile), max 1400px. Wordmark 16px tall left (a white version crossfades in over dark sections, 300ms); nav centre (Products · Developers · Resources · Company; Matter 425 15px, pill hit areas 40px, chevrons); *Log In* then *Contact Us* right.
@@ -31,9 +31,9 @@ Centred, top to bottom: ornament (24 → 32px) · eyebrow between 1px `--gradien
 - **Composer:** outer panel (`--radius-3xl`, 1px `--color-st`, padding 12 → 16px) around an inner field (`--radius-2xl`, 16 → 18px); context chips (`--color-sf`, `--radius-lg`, 12px).
 
 ## 5. Tabs, tags, chips
-- **Tab chips:** 48px, padding 12px 24px, Matter 525 15px, 1px `--color-st` border (dark when selected). Dark-active variant: inactive `--color-sf-secondary`, active `--color-sr-slate` + white. Segmented: pills in a bordered track. Product tab rail: active white with `--sr-indigo-800` text. Code tabs: 12px 525, active with a 2px `--sr-indigo-600` top border. Tab rows scroll sideways on mobile.
-- **Tags:** Matter 625 14px, padding 8px 14px, `--radius-xl`, background `*-50`, border `*-200`, text `*-600` ("SOC 2 Type I", "DPDP compliant").
-- **Spec chips:** white, 1px `--color-st`, pill, Matter 425 13–14px ("WAV", "Python SDK").
+- **Tab chips:** 40px, padding 8px 20px, Matter 525 15px, 1px `--color-st` border (dark when selected). Dark-active variant: inactive `--color-sf-secondary`, active `--color-sr-slate` + white. Segmented: pills in a bordered track. Product tab rail: active white with `--sr-indigo-800` text. Code tabs: 12px 525, active with a 2px `--sr-indigo-600` top border. Tab rows scroll sideways on mobile.
+- **Tags:** Matter 625 14px, padding 6px 12px, `--radius-xl`, background `*-50`, border `*-200`, text `*-600` ("SOC 2 Type I", "DPDP compliant").
+- **Spec chips:** white, 1px `--color-st`, pill, padding 6px 14px, Matter 425 13–14px ("WAV", "Python SDK").
 
 ## 6. Cards
 | Type | Spec |
@@ -63,7 +63,7 @@ Centred, top to bottom: ornament (24 → 32px) · eyebrow between 1px `--gradien
 |---|---|
 | Promo | Deep ground of the colour world, `--radius-3xl`, padding 40px, min-height 256px; Season Mix 32 → 36px white headline, accent line, white pill + 12px meta; a motif bleeding off the right (rising from the bottom on mobile) |
 | Use-case | Deep ground, H2 white + accent lead, hairline, two columns of title, accent line and 4 items; a motif cropped top-right |
-| **CTA** | A layered motif (`.cta .band-cta` + `.motif-stack`, `campaign.md` §5) on a canvas between the motif's own colours (`--band-bg`); `--radius-2xl → 3xl` with a 2px `--color-st` outline at 2px offset; **Season Mix 525**, two lines, colour following the motif (`--cta-ink`); one pill button; 16:10 on phones |
+| **CTA** | A layered motif (`.cta .band-cta` + `.motif-stack`, `campaign.md` §5) on a canvas between the motif's own colours (`--band-bg`); `--radius-2xl → 3xl` with a 2px `--color-st` outline at 2px offset; **Season Mix 425**, two lines, colour following the motif (`--cta-ink`); one pill button; 16:10 on phones |
 | Inline promo strip | White → `--sr-indigo-50` wash, 1px border, `--radius-2xl`, one sentence left, text link right |
 
 ## 9. Footer

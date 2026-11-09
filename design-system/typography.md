@@ -16,33 +16,33 @@ Tokens: `--font-season-mix`, `--font-matter`, `--font-matter-mono`, `--font-matt
 | Token | Value | Use |
 |---|---|---|
 | `--fw-light` | 325 | Rare, very large display only |
-| `--fw-regular` | 425 | Banner headlines, body, metrics |
+| `--fw-regular` | 425 | **All Season Mix headings** (H1, H2, band and in-section titles, banner headlines), body, metrics, as on sarvam.ai |
 | `--fw-text` | 415 | Matter running text on pages. The trial Matter renders ~2% heavier than the licensed file; set back to 425 with licensed fonts |
-| `--fw-medium` | 525 | **All page headings** (H1, H2, card and band titles), labels, buttons, stats. Bold and semibold read too heavy |
+| `--fw-medium` | 525 | Matter card titles, labels, buttons, stats. Never on Season Mix headings |
 | `--fw-semibold` | 625 | Tags; blog-cover titles (§4) |
 
 Never 700+. Hierarchy comes from size and the Season Mix / Matter contrast.
 
 ## 3. Web type scale
-Sizes are responsive tokens in `tokens.css` (mobile → tablet at 768 → laptop at 1024); use the token, never the number. Secondary text on Sarvam is 16–18px: never set paragraphs, tabs, chips or links at 13–14px.
+Sizes are responsive tokens in `tokens.css`, measured on sarvam.ai (mobile → tablet at 768 → laptop at 1024; "fluid" sizes grow smoothly from 375 to 1280px); use the token, never the number. Secondary text on Sarvam is 16–18px: never set paragraphs, tabs, chips or links at 13–14px.
 
 | Style | Font / weight | Token | Size (mobile → tablet, laptop) | LH | Tracking | Colour |
 |---|---|---|---|---|---|---|
-| Hero H1 | Season Mix 525 | `--text-h1` | 44 → 64, 66 | 1.05 | -0.025em | `tx` |
-| Product H1 | Season Mix 525 | `--text-h1-product` | 52 → 64, 76 | 1.05 | -0.025em | `tx` |
-| Section H2 | Season Mix 525 | `--text-h2` | 34 → 46, 52 | 1.15 | -0.02em | `tx` |
-| Band headline | Season Mix 525 | `--text-band` | 36 → 48, 54 | 1.1 | -0.02em | follows the motif |
-| In-section title | Season Mix 525 | `--text-h3` | 28, 32 | 1.2 | -0.015em | `tx` / white |
-| Metric (price, big number) | Season Mix 425 | `--text-metric` | 56 → 72, 74 | 1 | -0.02em | `tx` |
-| Hero subhead | Matter 425 | `--text-subhead` | 18 → 20, 22 | 1.6 | 0 | `tx-secondary` |
-| Section lead / body | Matter 425 | `--text-lead` / `--text-body` | 17 → 18, 20 / 16 → 17, 20 | 1.6 | 0 | `tx-secondary`, max 60ch |
-| Body small | Matter 425 | `--text-body-sm` | 15 → 16, 18 | 1.55 | 0 | `tx-tertiary` |
-| UI text (tabs, chips, rows, links) | Matter 425 | `--text-ui` | 16, 18 | 1.5 | 0 | |
-| Card title | Matter 525 | `--text-card-title` | 22, 28 | 1.3 | -0.015em | `tx` |
-| Value statement / quote | Matter 525 / 425 | `--text-value` / `--text-quote` | 20 → 21, 24 / 20 → 22, 26 | 1.4 / 1.6 | 0 | `tx` |
-| Eyebrow | Matter 425 | `--text-eyebrow` | 14 → 16, 18 | 1.5 | 0.025em | `sr-indigo-900` |
-| Overline | Matter 525 caps | `--text-overline` | 12, 14 | 1.33 | 0.1em | `tx-tertiary` |
-| Meta / label | Matter 425 / 525 | `--text-meta` / `--text-label` | 14, 16 / 13, 15 | 1.55 | 0 | `tx-tertiary` |
+| Hero H1 | Season Mix 425 | `--text-h1` | 44 → 64, fluid | 1.05 | -0.025em | `tx` |
+| Product H1 | Season Mix 425 | `--text-h1-product` | 44 → 56, fluid | 1.05 | -0.025em | `tx` |
+| Section H2 | Season Mix 425 | `--text-h2` | 28 → 40, fluid | 1.15 | -0.02em | `tx` |
+| Band headline | Season Mix 425 | `--text-band` | 32 → 44, fluid | 1.1 | -0.02em | follows the motif |
+| In-section title | Season Mix 425 | `--text-h3` | 26 | 1.2 | -0.015em | `tx` / white |
+| Metric (price, big number) | Season Mix 425 | `--text-metric` | 56 → 72, fluid | 1 | -0.02em | `tx` |
+| Hero subhead | Matter 425 | `--text-subhead` | 18 → 20 | 1.6 | 0 | `tx-secondary` |
+| Section lead / body | Matter 425 | `--text-lead` / `--text-body` | 17 → 18, 20 / 16 → 17, 18 | 1.6 | 0 | `tx-secondary`, max 60ch |
+| Body small | Matter 425 | `--text-body-sm` | 15 → 16 | 1.55 | 0 | `tx-tertiary` |
+| UI text (tabs, chips, rows, links) | Matter 425 | `--text-ui` | 16 | 1.5 | 0 | |
+| Card title | Matter 525 | `--text-card-title` | 20 → 22, 24 | 1.3 | -0.015em | `tx` |
+| Value statement / quote | Matter 525 / 425 | `--text-value` / `--text-quote` | 20 → 21, 22 / 20 → 22, 24 | 1.4 / 1.6 | 0 | `tx` |
+| Eyebrow | Matter 425 | `--text-eyebrow` | 14 → 16 | 1.5 | 0.025em | `sr-indigo-900` |
+| Overline | Matter 525 caps | `--text-overline` | 12 | 1.33 | 0.1em | `tx-tertiary` |
+| Meta / label | Matter 425 / 525 | `--text-meta` / `--text-label` | 14 / 13 | 1.55 | 0 | `tx-tertiary` |
 | Nav item | Matter 425 | | 15 | normal | 0 | `tx` |
 | Button large / small | Season Mix 525 / Matter 525 | | 16 / 15–16 | 1.5 | 0 | |
 | Stat value | Matter 525 tabular | | 20 | 1.3 | -0.5px | `tx` |

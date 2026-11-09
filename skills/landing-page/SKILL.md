@@ -61,7 +61,7 @@ node skills/landing-page/screenshot.js website/<slug>/index.html   # --all to sa
 Writes `mobile-375.png`, `tablet-768.png`, `desktop-1440.png` to `website/<slug>/screenshots/` and checks 320, 1024, 1280 and 1600. Fails on horizontal overflow, missing fonts, broken images, console errors or more than one h1. Then open every screenshot:
 - [ ] Each section follows its `layout.md` §5 row at each width; tablet is its own composition.
 - [ ] Hero and every section heading centred; full section gap everywhere; stacked blocks share edges.
-- [ ] Headings Season Mix 525 at token sizes; paragraphs `#3D3D3D`; no 13–14px secondary text.
+- [ ] Headings Season Mix 425 at token sizes; paragraphs `#3D3D3D`; no 13–14px secondary text.
 - [ ] Layered art and bands landscape on phones; motif layering checks in `campaign.md` §5 pass.
 - [ ] Saturated colour ≤ ~10% outside the campaign moments; banners for the product would sit beside it as one family.
 - [ ] Keyboard pass through header, tabs, accordion, carousel and CTA. No orphaned words in headlines.

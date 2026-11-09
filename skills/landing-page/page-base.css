@@ -64,13 +64,13 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 /* ---------- Type ---------- */
 .h1, .h2, .display {
   font-family: var(--font-season-mix);
-  font-weight: var(--fw-medium);   /* headings are medium (525): approved; bold and semibold read too heavy */
+  font-weight: var(--fw-regular);  /* Season Mix headings are regular (425), as on sarvam.ai */
   text-wrap: balance;
 }
 .h1 { font-size: var(--text-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-h1); }
 .h1.product { font-size: var(--text-h1-product); }
 .h2 { font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); }
-.h3 { font-family: var(--font-season-mix); font-weight: var(--fw-medium); font-size: var(--text-h3); line-height: 1.2; letter-spacing: -0.015em; }
+.h3 { font-family: var(--font-season-mix); font-weight: var(--fw-regular); font-size: var(--text-h3); line-height: 1.2; letter-spacing: -0.015em; }
 .subhead { font-size: var(--text-subhead); line-height: var(--lh-subhead); color: var(--color-tx-secondary); text-wrap: pretty; }
 /* Subtext colours follow sarvam.ai: prominent subtext (hero line, section intros, demo copy)
    is tx-secondary #3D3D3D; tx-tertiary #666 is only for card descriptions, captions and meta. */
@@ -136,9 +136,9 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 .btn {
   position: relative; isolation: isolate; overflow: hidden;
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  /* Sizes (components.md): content 48px / 16px, hero 56px (.btn-lg),
-     header 44px / 15px (.site-header .btn). */
-  min-height: 48px; padding: 12px 26px; border-radius: var(--radius-full);
+  /* Sizes measured on sarvam.ai (components.md): content 44px / 16px, hero 52px (.btn-lg),
+     header 40px / 15px (.site-header .btn). */
+  min-height: 44px; padding: 10px 20px; border-radius: var(--radius-full);
   font-family: var(--font-matter); font-weight: var(--fw-medium); font-size: 16px; line-height: 1.5;
   white-space: nowrap; text-align: center;
   transition: transform var(--duration-fast) var(--ease-brand), box-shadow var(--duration-button) var(--ease-brand);
@@ -160,7 +160,7 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 .btn-white:hover::after { opacity: .05; }
 
 .btn-lg {
-  min-height: 56px; padding: 16px 32px;
+  min-height: 52px; padding: 14px 24px;
   font-family: var(--font-season-mix); font-size: 16px;
 }
 .btn-lg.btn-primary   { background: var(--gradient-btn-primary); color: #fff; box-shadow: var(--shadow-button-dark); }
@@ -195,7 +195,7 @@ ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
 .site-header .brand img { height: 16px; width: auto; }
 .site-nav { display: none; }
 .site-header .actions { margin-left: auto; display: flex; align-items: center; gap: 8px; }
-.site-header .btn { min-height: 44px; padding: 10px 22px; font-size: 15px; }
+.site-header .btn { min-height: 40px; padding: 8px 20px; font-size: 15px; }
 .site-header .actions .btn-light { display: none; }
 .menu-toggle {
   display: grid; place-items: center; width: var(--touch-min); height: var(--touch-min);
@@ -329,7 +329,7 @@ body.menu-open .site-header .actions .btn-dark { background: var(--color-sf-seco
   min-height: 380px; display: flex; flex-direction: column; gap: 12px;
   background: var(--ground, var(--ground-indigo)); color: var(--color-tx-inverse);
 }
-.card-dark .title { font-family: var(--font-season-mix); font-weight: var(--fw-medium); font-size: var(--text-h3); line-height: 1.2; letter-spacing: -0.015em; }
+.card-dark .title { font-family: var(--font-season-mix); font-weight: var(--fw-regular); font-size: var(--text-h3); line-height: 1.2; letter-spacing: -0.015em; }
 .card-dark .body-sm { color: var(--accent, var(--on-indigo-accent)); }
 
 /* ---------- Motifs (imagery.md) ----------
@@ -356,7 +356,7 @@ body.menu-open .site-header .actions .btn-dark { background: var(--color-sf-seco
 
 /* ---------- Tags, chips, badges (components.md) ---------- */
 .tag {
-  display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: var(--radius-xl);
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: var(--radius-xl);
   font-size: 14px; line-height: 1.4; font-weight: var(--fw-semibold);
   background: var(--sr-indigo-50); border: 1px solid var(--sr-indigo-200); color: var(--sr-indigo-600);
 }
@@ -364,16 +364,16 @@ body.menu-open .site-header .actions .btn-dark { background: var(--color-sf-seco
 .tag.orange { background: var(--sr-orange-50); border-color: var(--sr-orange-200); color: var(--sr-orange-600); }
 .tag.pink   { background: var(--sr-pink-50);   border-color: var(--sr-pink-200);   color: var(--sr-pink-600); }
 .chip {
-  display: inline-flex; align-items: center; padding: 8px 18px; border-radius: var(--radius-full);
+  display: inline-flex; align-items: center; padding: 6px 14px; border-radius: var(--radius-full);
   background: #fff; border: 1px solid var(--color-st); font-size: 15px; line-height: 1.4;
 }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* Pill tabs: scroll on mobile, wrap from md */
-.tabs { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 4px; margin: -4px; }
+.tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 4px; margin: -4px; }
 .tabs::-webkit-scrollbar { display: none; }
 .tab {
-  flex: none; min-height: 48px; padding: 12px 24px; border-radius: var(--radius-full);
+  flex: none; min-height: 40px; padding: 8px 20px; border-radius: var(--radius-full);
   background: var(--color-sf-secondary); color: var(--color-tx); font-size: 15px; font-weight: var(--fw-medium);
   border: 1px solid var(--color-st);                 /* subtle grey outline */
   transition: background var(--duration-normal) var(--ease-brand), color var(--duration-normal), border-color var(--duration-normal);
@@ -491,18 +491,6 @@ body.menu-open .site-header .actions .btn-dark { background: var(--color-sf-seco
   .js .reveal.in { opacity: 1; translate: 0 0; }
 }
 
-/* ---------- Laptop and up: component text +2px (approved Nov 2026) ---------- */
-@media (min-width: 1024px) {
-  .btn, .btn-lg { font-size: 18px; }
-  .site-header .btn { font-size: 17px; }
-  .site-nav a { font-size: 17px; }
-  .tag { font-size: 16px; }
-  .chip, .tab { font-size: 17px; }
-  .site-footer h2 { font-size: 14px; line-height: 20px; }
-  .site-footer .legal { font-size: 14px; }
-  .version { font-size: 28px; }
-  .band .display { font-weight: var(--fw-medium); }
-}
 /* Small laptops (1024–1279): with laptop-size type the centred nav collides with the
    buttons, so the nav flows beside them instead. Centred again from 1280. */
 @media (min-width: 1024px) and (max-width: 1279.98px) {
@@ -580,7 +568,6 @@ body.menu-open .site-header .actions .btn-dark { background: var(--color-sf-seco
 .code pre { margin: 0; padding: 20px; overflow-x: auto; font: 400 14px / 1.7 var(--font-matter-mono), var(--font-indic); color: var(--code-fg); }
 .code .k { color: var(--code-keyword); } .code .f { color: var(--code-function); } .code .s { color: var(--code-string); }
 @media (min-width: 768px) { .code pre { font-size: 15px; padding: 24px 28px; } }
-@media (min-width: 1024px) { .code pre { font-size: 17px; } }
 
 /* Inline promo strip */
 .strip {
@@ -598,19 +585,17 @@ body.menu-open .site-header .actions .btn-dark { background: var(--color-sf-seco
 .cta .band-cta { min-height: 0; aspect-ratio: 16 / 10; padding: 20px; }
 .cta .motif-stack { --stack-w: 96%; --stack-step: 30%; }
 .cta-copy { position: relative; z-index: 1; display: grid; justify-items: center; gap: 14px; }
-.cta-copy .display { color: var(--cta-ink, var(--color-tx)); font-family: var(--font-season-mix); font-weight: var(--fw-medium); font-size: clamp(26px, 6vw + 4px, 34px); line-height: 1.08; letter-spacing: -0.025em; }
+.cta-copy .display { color: var(--cta-ink, var(--color-tx)); font-family: var(--font-season-mix); font-weight: var(--fw-regular); font-size: clamp(26px, 6vw + 4px, 34px); line-height: 1.08; letter-spacing: -0.025em; }
 .cta-copy .btn { min-height: 40px; padding: 8px 18px; font-size: 15px; }
 @media (min-width: 768px) {
   .cta .band-cta { aspect-ratio: auto; min-height: 440px; padding: var(--band-pad); }
   .cta-copy { gap: 28px; }
-  .cta-copy .display { font-size: clamp(42px, 2vw + 34.5px, 58px); }
-  .cta-copy .btn { min-height: 48px; padding: 12px 26px; font-size: 16px; }
+  .cta-copy .display { font-size: clamp(36px, 2vw + 28.5px, 54px); }
+  .cta-copy .btn { min-height: 44px; padding: 10px 20px; font-size: 16px; }
 }
 @media (min-width: 1024px) {
   .cta .band-cta { min-height: 480px; }
   .cta .motif-stack { --stack-w: 86%; --stack-step: 28%; }
-  .cta-copy .display { font-size: clamp(56px, 1.25vw + 46px, 64px); }
-  .cta-copy .btn { font-size: 18px; }
 }
 @media (min-width: 1280px) { .cta .motif-stack { --stack-w: 76%; --stack-step: 26%; } }
 
